@@ -1,0 +1,38 @@
+
+/*Customizing default CSS*/
+
+/*changing sidebar color to resourcify green*/
+.wizard ul, .tabcontrol ul{
+    background-color: #2E6677;
+    color: #aaa;
+    cursor: default;
+}
+
+/*changing sidebar sub color of different statuses to resourcify green*/
+.wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active {
+    background-color: inherit;
+}
+
+.wizard > .steps .done a, .wizard > .steps .done a:hover, .wizard > .steps .done a:active {
+    background-color: inherit;
+}
+
+.wizard > .steps .disabled a, .wizard > .steps .disabled a:hover, .wizard > .steps .disabled a:active {
+    background-color: inherit;
+}
+
+.wizard.vertical > .content
+{
+    display: inline;
+    float: left;
+    margin: 0;
+    width: 70%;
+}
+
+.wizard.vertical > .actions {
+    display: grid;
+    float: left;
+    margin: 0;
+    width: 100%;
+    
+}

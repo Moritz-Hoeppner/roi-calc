@@ -1,0 +1,74 @@
+<head>
+    <script src="jquery.js"></script>
+    <script src="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/jquery.steps-1.1.0/jquery.steps.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/main.css">
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $("#res-roi-wizard").steps({
+                headerTag: ".res-roi-section-steps-label",
+                bodyTag: "section",
+                transitionEffect: "slideLeft",
+                stepsOrientation: "vertical",
+                autoFocus: true
+            });
+        });
+
+    </script>
+
+</head>
+
+
+<body>
+<div id="res-roi-wizard">
+    
+<!-- - - - - - -  Section 1 - Admindistrative Einsparungen  - - - - - - -->
+
+    <div class="res-roi-section-steps-label">
+                <h3>Admindastrive Einsparungen</h3>
+    </div>  
+    
+    <section>
+        <h2>Admindastrive Einsparungen</h2>
+        <p class="res-roi-section-input-label-secondary">Wie viele Bestellungen gehen bei Ihnen pro Woche ein?* (Inklusive Rückrufe)</p>
+        <input class="res-roi-section-input-number" type="number">
+    </section>
+
+    <!-- - - - - - - Section 2 - Reduzierte Leerfahrten  - - - - - - -->
+    
+    <div class="res-roi-section-steps-label">  
+        <h3>Reduzierte Leerfahrten</h3>
+    </div>
+    
+    <section>
+        <p>Wonderful transition effects.</p>
+    </section>
+        
+ <!-- - - - - - - Section 3 - Verbesserte Kundenzufriedenheit  - - - - - - -->
+    
+    <div class="res-roi-section-steps-label">
+        <h3>Verbesserte Kundenzufriedenheit</h3>    
+    </div>
+    
+    <section>
+        <p>The next and previous buttons help you to navigate through your content.</p>
+    </section>
+
+<!-- - - - - - - Section 4 - Eigene IT Einsparungen  - - - - - - -->
+    
+    <div class="res-roi-section-steps-label">
+        <h3>Eigene IT Einsparungen</h3>
+    </div>
+    <section>
+        <p>The next and previous buttons help you to navigate through your content.</p>
+    </section>
+
+</div>
+
+</body>
+
+
