@@ -1,74 +1,573 @@
 <head>
-    <script src="jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/jquery.steps-1.1.0/jquery.steps.js"></script>
-    <link rel="stylesheet" type="text/css" href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/jquery.steps.css">
-    <link rel="stylesheet" type="text/css" href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/main.css">
+    <script src="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/functions.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/jquery.steps.css">
+    <link rel="stylesheet" type="text/css"
+          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/css/main.css">
 
-
+    <link rel="stylesheet"
+          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/jquery-ui-1.12.1/jquery-ui.min.css ">
+    <link rel="stylesheet" href="/resources/demos/style.css">
 
     <script>
-
-        $(document).ready(function () {
-            $("#res-roi-wizard").steps({
-                headerTag: ".res-roi-section-steps-label",
-                bodyTag: "section",
-                transitionEffect: "slideLeft",
-                stepsOrientation: "vertical",
-                autoFocus: true
-            });
+        $(function () {
         });
-
     </script>
 
 </head>
 
 
 <body>
-<div id="res-roi-wizard">
-    
-<!-- - - - - - -  Section 1 - Admindistrative Einsparungen  - - - - - - -->
+<div id="res-roi-wizard-container">
+    <div id="res-roi-wizard">
 
-    <div class="res-roi-section-steps-label">
-                <h3>Admindastrive Einsparungen</h3>
-    </div>  
-    
-    <section>
-        <h2>Admindastrive Einsparungen</h2>
-        <p class="res-roi-section-input-label-secondary">Wie viele Bestellungen gehen bei Ihnen pro Woche ein?* (Inklusive Rückrufe)</p>
-        <input class="res-roi-section-input-number" type="number">
-    </section>
+        <div class="res-roi-button" id="res-roi-button-next">
+            Weiter
+        </div>
 
-    <!-- - - - - - - Section 2 - Reduzierte Leerfahrten  - - - - - - -->
-    
-    <div class="res-roi-section-steps-label">  
-        <h3>Reduzierte Leerfahrten</h3>
+        <div class="res-roi-button" id="res-roi-button-previous">
+            Zurück
+        </div>
+
+        <!-- - - - - - -  Section 1 - Admindistrative Einsparungen  - - - - - - -->
+
+        <div class="res-roi-section-steps-label">
+            <div class="res-roi-steps">
+                <div class="res-roi-steps-numbering">
+                    <div class="res-number">1</div>
+                </div>
+                <div class="res-roi-steps-text">
+                    <h3>Admindastrive Einsparungen</h3>
+                    <p>Die PRX nimmt übernimmt für Sie die Kundenkommunikation. psum dolor sit amet,
+                        consetetursadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
+                </div>
+            </div>
+        </div>
+
+
+        <section>
+            <h2>Admindastrive Einsparungen</h2>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Wie viele Bestellungen gehen bei Ihnen pro Woche
+                    ein?* (Inklusive Rückrufe)
+                </div>
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="orders-week">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-select">
+                    <div class="res-roi-section-input-label-secondary">Vorhandendes ERP-/CRM-System
+                    </div>
+                    <select class="res-roi-section-input-select">
+                        <option value="option1">Give me Options</option>
+                        <option value="option2">I am desperate for Options</option>
+                        <option value="option3">O No, I am Empty...SAD</option>
+                        <option value="option4">Anderes</option>
+                    </select>
+                </div>
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+
+            <div class="res-roi-section-input-label-primary">Eingang von bestellung nach Medium*
+            </div>
+            <div id="medium-percentage-container">
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">E-Mail</div>
+                    <input class="res-roi-section-input-number res-roi-input-all " type="number" id="percentage-mail" value="5">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Telefon</div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-phone" value="63">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Fax</div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-fax" value="24">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Eigenes Portal</div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-portal" value="8">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total</div>
+                    <input class="res-roi-section-input-number-total" readonly id="percentage-total">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="res-roi-section-input-label-primary">Admindistrativer Aufwand pro Medium*
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">E-Mail</div>
+                <input class="res-roi-section-input-number res-roi-input-all " id="workload-email" readonly value="2:30">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Telefon</div>
+                <input class="res-roi-section-input-number res-roi-input-all" id="workload-phone" readonly value="4 m 45 s">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Fax</div>
+                <input class="res-roi-section-input-number res-roi-input-all" id="workload-fax" readonly value="4 m 45 s">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Portal</div>
+                <input class="res-roi-section-input-number" id="workload-portal" readonly value="4 m 45 s">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="res-roi-specification-menu-container res-roi-input-all" id="specification-menu-email">
+            <div class="res-roi-specification-whitespace">
+            </div>
+            <div class="res-roi-specification-menu">
+                <h4>Zeit pro Auftrag per e-Mail</h4>
+                <p>Sie brauchen länger als Sie denken</p>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Öffnen der E Mail
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-open" value="5">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">E-Mail Lesen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-reading" value="40">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-process" value="180">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-acceptOrder" value="60">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Andere
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-other" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total
+                    </div>
+                    <input class="res-roi-section-input-number-total" readonly id="email-total" value="2:30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="res-roi-button res-roi-button-done" id="res-roi-button-mail-done">Fertig</div>
+
+        </div>
+
+        <div class="res-roi-specification-menu-container res-roi-input-all" id="specification-menu-phone">
+            <div class="res-roi-specification-whitespace">
+            </div>
+            <div class="res-roi-specification-menu">
+                <h4>Zeit pro Auftrag per Telefon</h4>
+                <p>Sie brauchen länger als Sie denken</p>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Telefonat annehmen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-accept" value="30" s>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Informationen aufnehmen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-noting" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-process" value="180">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-acceptOrder" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Andere
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-other" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total
+                    </div>
+                    <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="phone-total" value="2:30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="res-roi-button res-roi-button-done" id="res-roi-button-phone-done">Fertig</div>
+
+        </div>
+
+        <div class="res-roi-specification-menu-container res-roi-input-all" id="specification-menu-fax">
+            <div class="res-roi-specification-whitespace">
+            </div>
+            <div class="res-roi-specification-menu">
+                <h4>Zeit pro Auftrag pro Fax</h4>
+                <p>Sie brauchen länger als Sie denken</p>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Fax empfangen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-open" value="10" s>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Fax lesen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-reading" value="60">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-process" value="180">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Auftragsbestätigung faxen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-acceptOrder" value="120">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Andere
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-other" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total
+                    </div>
+                    <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="fax-total" value="2:30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="res-roi-button res-roi-button-done" id="res-roi-button-fax-done">Fertig</div>
+
+        </div>
+
+        <div class="res-roi-specification-menu-container res-roi-input-all" id="specification-menu-portal">
+            <div class="res-roi-specification-whitespace">
+            </div>
+            <div class="res-roi-specification-menu">
+                <h4>Portal Anpassen</h4>
+                <p>Sie brauchen länger als Sie denken</p>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Portal Öffnen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-öffnen" value="10" s>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Daten in ERP System verarbeiten
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-process" value="180">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-accept" value="60">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Andere
+                    </div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-other" value="30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total
+                    </div>
+                    <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="portal-total" value="2:30">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+            <div class="res-roi-button res-roi-button-done" id="res-roi-button-portal-done">Fertig</div>
+
+        </div>
+
+
+        <!-- - - - - - - Section 2 - Reduzierte Leerfahrten  - - - - - - -->
+
+        <div class="res-roi-section-steps-label">
+            <div class="res-roi-steps">
+                <div class="res-roi-steps-numbering">
+                    <div class="res-number">1</div>
+                </div>
+                <div class="res-roi-steps-text">
+                    <h3>Reduzierte Fehlfahrten</h3>
+                    <p>Die PRX nimmt übernimmt für Sie die Kundenkommunikation. psum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Reduzierte Fehlfahrten</h2>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Wie viele Fehlfahrten fallen bei Ihnen pro Woche an?
+                </div>
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="amount-wront-trip">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Wie hoch sind die Kosten die durch eine Fehlfahrt
+                    anfallen?
+                </div>
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="cost-wrong-trip">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">Wie viele Fehlfahrten fallen in Ihrem Unternhehmen pro Woche an?</span>
+                </div>
+            </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Wie viel Zeitaufwand ist mit einer Fehlfahrt
+                    verbunden?
+                </div>
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="time-wrong-trip">
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+            <div class="res-roi-section-input-label-primary">Aus welchen Gründen fallem Fehlfahrten an*
+            </div>
+            <div id="reasons-wrong-pickups-percentage-container">
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Falscher Container</div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="wrong-container" value="50">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Container nicht zugänglich</div>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="container-not-accesible" value="50">
+                    <div class="res-roi-section-label-percentage">%</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="res-roi-input-container-number">
+                        <div class="res-roi-section-input-label-secondary">Andere (Bitte spezifizieren)</div>
+                        <input class="res-roi-section-input-number" type="number" id="others" value="0">
+                        <div class="res-roi-section-label-percentage">%</div>
+                        <div class="res-roi-steps-info">i
+                            <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                        </div>
+                    </div>
+                    <div class="res-roi-input-container-text">
+                        <input class="res-roi-section-input-text" type="text" id="wrong-trip-reason-other"
+                               placeholder="Fehlfahrtgrund">
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Total</div>
+                    <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="reasons-wrong-pickups-total">
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- - - - - - - Section 3 - Verbesserte Kundenzufriedenheit  - - - - - - -->
+
+        <div class="res-roi-section-steps-label">
+            <div class="res-roi-steps">
+                <div class="res-roi-steps-numbering">
+                    <div class="res-number">1</div>
+                </div>
+                <div class="res-roi-steps-text">
+                    <h3>Verbesserte Kundenzufriedenheit</h3>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Verbesserte Kundenzufriedenheit</h2>
+            <div >
+                <div class="res-roi-input-container-slider">
+                    <div class="res-roi-section-input-label-secondary">Wie viele von der bei Ihn eingehenden Anrufe landen in der Warteschleife?</div>
+                    <div>
+                        <div class="res-roi-slider-element-container">
+                            <div id="amount-waiting-loop-slider"></div>
+                        </div>
+                        <div>
+                            <input type="text" readonly class="res-roi-input-slider-output res-roi-input-all" id="amount-waiting-loop-value">
+                        </div>
+                        <div>
+                            <div class="res-roi-steps-info">i
+                                <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="res-roi-section-input-checkbox-container">
+                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked">
+                            <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        </label>
+                        <div class="res-roi-section-input-label-secondary">Wir erfassen diese Daten noch nicht</div>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-slider">
+                    <div class="res-roi-section-input-label-secondary">Wie viele Kunden haben Sie?</div>
+                    <div>
+                        <div class="res-roi-slider-element-container">
+                            <div id="amount-customers-slider"></div>
+                        </div>
+                        <div>
+                            <input type="text" readonly class="res-roi-input-slider-output res-roi-input-all" id="amount-customers-value">
+                        </div>
+                        <div>
+                            <div class="res-roi-steps-info">i
+                                <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-slider">
+                    <div class="res-roi-section-input-label-secondary">Wie viele Ihrer Kunden würdern gerne einfacher Bestellen können?</div>
+                    <div>
+                        <div class="res-roi-slider-element-container">
+                            <div id="amount-customers-easy-order-slider"></div>
+                        </div>
+                        <div>
+                            <input type="text" readonly class="res-roi-input-slider-output res-roi-input-all" id="amount-customers-easy-order-value">
+                        </div>
+                        <div>
+                            <div class="res-roi-steps-info">i
+                                <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <!-- - - - - - - Section 4 - Eigene IT Einsparungen  - - - - - - -->
+
+        <div class="res-roi-section-steps-label">
+            <div class="res-roi-steps">
+                <div class="res-roi-steps-numbering">
+                    <div class="res-number">1</div>
+                </div>
+                <div class="res-roi-steps-text">
+                    <h3>Admindastrive Einsparungen</h3>
+                    <p>Die PRX nimmt übernimmt für Sie die Kundenkommunikation. psum dolor sit amet, consetetur
+                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
+                </div>
+            </div>
+        </div>
+        <section>
+            <p>The next and previous buttons help you to navigate through your content.</p>
+        </section>
+
+
     </div>
-    
-    <section>
-        <p>Wonderful transition effects.</p>
-    </section>
-        
- <!-- - - - - - - Section 3 - Verbesserte Kundenzufriedenheit  - - - - - - -->
-    
-    <div class="res-roi-section-steps-label">
-        <h3>Verbesserte Kundenzufriedenheit</h3>    
-    </div>
-    
-    <section>
-        <p>The next and previous buttons help you to navigate through your content.</p>
-    </section>
-
-<!-- - - - - - - Section 4 - Eigene IT Einsparungen  - - - - - - -->
-    
-    <div class="res-roi-section-steps-label">
-        <h3>Eigene IT Einsparungen</h3>
-    </div>
-    <section>
-        <p>The next and previous buttons help you to navigate through your content.</p>
-    </section>
-
 </div>
-
 </body>
 
+
+<script>
+    setup();
+
+
+</script>
 
