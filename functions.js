@@ -48,7 +48,7 @@ function modifyWizard() {
         });
 
         $("#res-roi-button-next").click(function () {
-            $("#res-roi-wizard").steps("next");
+            checkIfAllowedToGoNext("#res-roi-wizard-p-",".res-roi-input-all", ".res-roi-percentage-input");
         });
 
         //    adding steps header
@@ -132,7 +132,7 @@ function settingEventListeners() {
     
 //        update total percentage of medium percentage on value change
         $("#medium-percentage-container .res-roi-section-input-number").change(function () {
-            setPercentageTotal("#percentage-total", "#medium-percentage-container", ".res-roi-section-input-number")
+            setPercentageTotal("#percentage-total", "#medium-percentage-container", ".res-roi-section-input-number");
             percentageValidation("#percentage-total", "#medium-percentage-container", ".res-roi-section-input-number");
         });
 
@@ -161,10 +161,48 @@ function settingEventListeners() {
         $( "#amount-customers-easy-order-slider" ).slider({
             slide: function() {
                 console.log("easy");
-                setSliderValueOutputPercent("#amount-customers-easy-order-value", "#amount-customers-easy-order-slider");
+                setSliderValueOutputPercent("#amount-customers-easy-order-value", "#amount-customers-easy-order-slider", "#specification-menu-email", "#res-roi-button-next", "#res-roi-button-previous");
             }
         });
+
+        //jump to specify menu email when tab pressed on eigensportal percentage
+        controllTabSubMenu("#percentage-portal", "#email-open", "#specification-menu-email", "", "#res-roi-button-next", "#res-roi-button-previous", "", "");
+
+    //jump to specify menu phone when tab pressed on email other
+        controllTabSubMenu("#email-other", "#phone-accept", "#specification-menu-phone", "#specification-menu-email","#res-roi-button-next", "#res-roi-button-previous", "#workload-email", ".res-roi-section-input-number" );
+
+        //jump to specify menu phone when tab pressed on email other
+        controllTabSubMenu("#phone-other", "#fax-receive", "#specification-menu-fax", "#specification-menu-phone","#res-roi-button-next", "#res-roi-button-previous", "#workload-phone", ".res-roi-section-input-number");
+
+        //jump to specify menu phone when tab pressed on email other
+       controllTabSubMenu("#fax-other", "#portal-open", "#specification-menu-portal", "#specification-menu-fax","#res-roi-button-next", "#res-roi-button-previous", "#workload-fax", ".res-roi-section-input-number" );
+
+        controllTabSubMenuLast("#portal-other", "#orders-week", "#specification-menu-portal","#res-roi-button-next", "#res-roi-button-previous", "#workload-fax", ".res-roi-section-input-number" );
+
     });
+}
+
+//Jump to specific field on tab
+function controllTabSubMenu(OriginID, TargetID, ContainerIDOpen, ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses){
+    $(OriginID).keydown(function (event) {
+        if(event.which === 9){
+            CloseSpecifyMenu(ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses);
+            OpenSpecifyMenu(ContainerIDOpen, ElementOne, ElementTwo);
+            console.log(TargetID);
+            $(TargetID).focus();
+        }
+    })
+}
+
+function controllTabSubMenuLast(OriginID, TargetID, ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses){
+    $(OriginID).keydown(function (event) {
+        console.log(event.which);
+        if(event.which === 9){
+            CloseSpecifyMenu(ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses);
+            //OpenSpecifyMenu(ContainerIDOpen, ElementOne, ElementTwo);
+            $(TargetID).focus();
+        }
+    })
 }
 
 //creating slider inputs
@@ -225,17 +263,17 @@ function CloseSpecifyMenu(ContainerID, ShowElementOne, ShowElementTwo, TargetID,
 
 
 function sumOfValues(ContainerID, InputFieldClasses) {
-    var sum = 0;
-    var val = 0;
-    var selector = ContainerID + " " + InputFieldClasses;
+    let sum = 0;
+    let val = 0;
+    let selector = ContainerID + " " + InputFieldClasses;
     $(selector).each(function (element) {
         val = parseInt($(this).val());
         if (isNaN(val)) {
             val = 0;
         }
-        ;
         sum = sum + val;
     });
+    console.log("sum:" + sum);
     return sum;
 }
 
@@ -244,27 +282,28 @@ function setTotalTime(TargetID, ContainerID, InputFieldClasses) {
 }
 
 function secondsTimeSpanToMS(s) {
-    var h = Math.floor(s / 3600); //Get whole hours
+    let zero = 0;
+    let h = Math.floor(s / 3600); //Get whole hours
     s -= h * 3600;
-    var m = Math.floor(s / 60); //Get remaining minutes
+    let m = Math.floor(s / 60); //Get remaining minutes
     s -= m * 60;
     if(s<10){
-        var zero = 0;
+         zero = 0;
     }
     else{
-        var zero = "";
+         zero = "";
     }
     
     return m + ":" + zero + s //zero padding on minutes and seconds
 }
 
 function setPercentageTotal(TargetID, ContainerID, InputFieldClasses){
-    var Target = ContainerID + " " + TargetID;
+    let Target = ContainerID + " " + TargetID;
     $(Target).val(sumOfValues(ContainerID, InputFieldClasses)+"%");
 }
 
 function percentageValidation(TargetID, ContainerID, InputFieldClasses){
-    var Target = ContainerID + " " + TargetID;
+    let Target = ContainerID + " " + TargetID;
     if(sumOfValues(ContainerID, InputFieldClasses)!==100){
        $(Target).css("border-color", "red");
         return false;
@@ -276,6 +315,73 @@ function percentageValidation(TargetID, ContainerID, InputFieldClasses){
 }
 
 
+function currentscreen(){
+    let currentstep=$("#res-roi-wizard").steps("getCurrentIndex");
+    console.log("current step: " + currentstep);
+    return currentstep;
+}
+
+function currentClass(containerIDNameWithoutNumber){
+    let currentClass;
+    switch(currentscreen()){
+        case 0:
+            currentClass = containerIDNameWithoutNumber+"0";
+            break;
+        case 1:
+            currentClass = containerIDNameWithoutNumber+"1";
+            break;
+        case 2:
+            currentClass = containerIDNameWithoutNumber+"2";
+            break;
+        case 3:
+            currentClass = containerIDNameWithoutNumber+"3";
+            break;
+        default:
+            alert("We are sorry but something went wrong, please reload")
+    }
+    return(currentClass);
+}
+
+function checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass){
+    let Inputfields = containerIDNameWithoutNumber + " " + inputElementClass;
+    let status = true;
+    console.log("status: " + status);
+    $(Inputfields).each(function() {
+        console.log($(this).val().length);
+        if($(this).val().length === 0){status= false;}
+    });
+    if(status === true){
+        return true;
+    }
+    else{
+    return false;
+    }
+}
+
+function validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass) {
+    percentageFields = currentClass(containerIDNameWithoutNumber) + " " + percentageContainer;
+    console.log(percentageFields);
+    console.log(inputElementClass);
+    let sum = sumOfValues(percentageFields, inputElementClass);
+    if (sum === 100) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function checkIfAllowedToGoNext(containerIDNameWithoutNumber, inputElementClass, percentageContainer){
+    if(checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass) && validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass)){
+        $("#res-roi-wizard").steps("next");
+    }
+    else{
+        if(!checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass)) alert("Please fill all fields");
+        if(!validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass)) alert("Percent do not add up to 100%");
+    }
+
+}
+
 //Getting value of text field on change
 function collectingData(){
     $(".res-roi-input-all").focusout(function () {
@@ -283,3 +389,4 @@ function collectingData(){
         console.log(($(this).val()));
     });
 }
+

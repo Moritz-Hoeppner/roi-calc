@@ -1,0 +1,497 @@
+/*
+*General Document Settings 
+*/
+body{
+    font-family:sans-serif;
+    
+}
+
+
+/*
+*Customizing default CSS of jQuery Steps
+*/
+
+/*changing sidebar color to resourcify green*/
+.wizard ul, .tabcontrol ul{
+/*    background-color: #2E6677;*/
+    color: #aaa;
+    cursor: default;
+}
+
+/*changing sidebar sub color of different status to resourcify green for all status the same*/
+.wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active {
+    background-color: inherit;
+}
+
+.wizard > .steps .done a, .wizard > .steps .done a:hover, .wizard > .steps .done a:active {
+    background-color: inherit;
+}
+
+.wizard > .steps .disabled a, .wizard > .steps .disabled a:hover, .wizard > .steps .disabled a:active {
+    background-color: inherit;
+}
+
+/*adjusting main part of wizard*/
+.wizard.vertical > .content
+{
+    display: inline;
+    float: right;
+    margin: 0;
+    width: 70%;
+    height: 100%;
+}
+
+
+.wizard.vertical > .actions {
+    display: grid;
+    float: left;
+    margin: 0;
+    width: 100%;
+    
+}
+
+/*hide default numbers*/
+res-roi-section-steps-container .number{
+    display: none;
+}
+
+/*max width of input section wihhin main field of wizard*/
+#res-roi-wizard-p-0{
+    max-width: 450px;
+    
+}
+
+#res-roi-wizard-p-1{
+    max-width: 450px;
+    
+}
+
+#res-roi-wizard-p-2{
+    max-width: 450px;
+    
+}
+
+#res-roi-wizard-p-3{
+    max-width: 450px;
+    
+}
+/*removing border radius of main wizard*/
+.wizard.vertical > .content {
+        border-radius: 0px;
+}
+
+/*
+***** Css of own classes *****
+*/
+#res-roi-wizard-container{
+    height: 750px;
+    width: 1300px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 5px 5px 40px lightgrey;
+
+}
+.res-roi-section-input-label-primary{
+    width: 400px;
+    color: #797979;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+/*Label of the Questions*/
+.res-roi-section-input-label-secondary{
+    width: 600px;
+    color: #797979;
+    font-size: 15px;
+    align-items: center;
+}
+
+/*Number Text Field*/
+.res-roi-section-input-number{
+    height: 25px;
+    width: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    color: #969696;
+    background-color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border: 2px  solid #EBE9ED;
+}
+
+#medium-percentage-container .res-roi-section-input-number{
+     margin: 0;
+     width: 62px;
+ }
+
+#reasons-wrong-pickups-percentage-container .res-roi-section-input-number{
+    margin: 0;
+    width: 62px;
+}
+
+.res-roi-section-input-text{
+    height: 25px;
+    width: 440px;
+    margin-right: 10px;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 15px;
+    color: #969696;
+    padding-left: 10px;
+    background-color: #fff;
+    line-height: 25px;
+    border: 2px  solid #EBE9ED;
+
+}
+
+
+
+.res-roi-input-container-slider{
+
+}
+
+.res-roi-input-container-slider .res-roi-input-slider-output{
+    margin-right: 10px;
+    float: right;
+/*    margin-bottom: 50px;*/
+}
+
+.res-roi-slider-element-container{
+    float: left;
+    width: 350px;
+    margin-top: 0px;
+}
+
+.res-roi-input-container-slider .res-roi-section-input-label-secondary{
+    margin-bottom: 10px;
+    width: 350px;
+}
+
+.res-roi-slider-element-container .ui-slider-handle{
+    border-radius: 15px;
+    margin-top: -3px;
+    background: #2E6677 !important;
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.res-roi-slider-element-container .ui-slider{
+    margin-top: 6px;
+}
+
+.res-roi-input-slider-output{
+    height: 25px;
+    width: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    color: #969696;
+    background-color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border: 2px  solid #EBE9ED;
+}
+
+.res-roi-section-label-percentage{
+    color: #797979;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.res-roi-section-input-number-total{
+    height: 25px;
+    width: 80px;
+    margin-right: 10px;
+    margin-left: 10px;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    color: #969696;
+    background-color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border: 2px  solid #EBE9ED;    
+}
+
+
+
+/***checkbox styling****/
+
+/* The container */
+.res-roi-section-input-checkbox-container {
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.res-roi-section-input-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.res-roi-section-input-checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 21px;
+    width: 21px;
+    background-color: #fff;
+    border: 1px solid #707070;
+}
+
+/* On mouse-over, add a grey background color */
+.res-roi-section-input-checkbox-container:hover input ~ .res-roi-section-input-checkbox-checkmark {
+    background-color: white;
+}
+
+/* When the checkbox is checked, add a blue background */
+.res-roi-section-input-checkbox-container input:checked ~ .res-roi-section-input-checkbox-checkmark {
+    background-color: #fff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.res-roi-section-input-checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.res-roi-section-input-checkbox-container input:checked ~ .res-roi-section-input-checkbox-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.res-roi-section-input-checkbox-container .res-roi-section-input-checkbox-checkmark:after {
+    left: 2px;
+    top: 2px;
+    width: 17px;
+    height: 17px;
+    border-radius: 10px;
+    background-color: #2E6677;
+}
+
+
+/*Container of Input Section (Container + Text Field)*/
+.res-roi-input-container-number{
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.res-roi-input-container-select{
+    margin-top: 20px;
+    display: block;
+    align-items: center;
+}
+
+.res-roi-section-input-select{
+    display: block;
+    margin-top: 10px;
+    height: 25px;
+    font-size: 14px;
+    color: #969696; 
+}
+/***Steps Labeling***/
+/*Steps Numbering */
+.res-roi-steps .res-number{
+    float: left;
+    font-size: 12px;
+    height:15px;
+    width: 15px;
+    border-radius: 10px;
+    margin-right: 5px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+}
+
+.res-roi-steps{
+    display: flex;
+}
+
+.res-roi-steps .res-roi-steps-numbering{
+
+    
+}
+
+.res-roi-steps-text{
+    margin-top: -16px;
+}
+
+.res-roi-steps-info{
+    position: absolute;
+    right: 0;
+    float: left;
+    font-size: 15px;
+    height:17px;
+    width: 17px;
+    line-height: 17px;
+    border-radius: 10px;
+    margin-right: 5px;
+    border: 1px solid #969696;
+    color: #969696;
+    text-align: center;
+}
+
+.res-roi-steps-info-tooltip{
+    visibility: hidden;
+    background-color: #fff;
+    color: #969696;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    box-shadow: 5px 5px 40px lightgrey;
+    position: absolute;
+    z-index: 1;
+    font-size: 14px;
+    width: 200px; 
+    opacity: 0.8;
+
+}
+
+.res-roi-steps-info:hover .res-roi-steps-info-tooltip{
+    visibility: visible;
+}
+
+
+/*Steps sub headings*/
+.res-roi-steps h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+/*Steps Descrition if  active*/
+.res-roi-steps p{
+    display: none;
+}
+
+/*Steps Descrition if not active*/
+.current p{
+    font-size: 12px;
+    margin-top: 0px;
+    display: block !important;
+}
+
+/*Adjusting height of input containers if not active*/
+res-roi-section-steps-container ul a{
+    height: 15px;
+    
+}
+
+/*Adjusting height of input containers if active*/
+res-roi-section-steps-container ul .current a{
+    height: 80px;
+    
+}
+
+.wizard.vertical > .steps > ul > li {
+    height: 30px;
+}
+
+.wizard.vertical > .steps > ul > .current {
+    height: 80px;
+}
+
+/*Steps sub headers*/
+.res-roi-steps-header{
+    color: white;
+    font-size: 20px;
+    margin-left: 20px; 
+    margin-top: 40px;
+}
+
+
+.res-roi-specification-menu-container{
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    bottom: -10000px;
+}
+
+.res-roi-specification-whitespace{
+    position: relative;
+    opacity: 0.5;
+    background-color: #797979;
+    height: 100%;
+    width: 65%;
+
+
+}
+
+.res-roi-specification-menu{
+    position: relative;
+    opacity: 1 !important;
+    background-color: #ECECEC;
+    width: 35%;
+    height: 100%;
+    padding: 30px;
+}
+
+
+
+
+/*
+*Creating New Buttons
+*/
+.res-roi-button{
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    font-size: 25px;
+    line-height: 30px;
+    bottom: 10px;
+    position: absolute;
+    border-radius: 5px;
+    z-index: 5 !important;
+}
+
+.res-roi-button:hover{
+    cursor: pointer;
+}
+#res-roi-button-next{
+    background-color: #579ACB;
+    color: #fff;
+    right: 20px;
+}
+
+#res-roi-button-previous{
+    background-color: grey;
+    color: #fff;
+    right: 120px;
+}
+
+.res-roi-button-done{
+    background-color: #579ACB;
+    color: #fff;
+    right: 20px;
+}
+
+h2{
+    color: #2E6677;
+    
+}
+
+
+.wizard.vertical > .steps {
+    background-color: #2E6677;
+    height: 100%;
+}

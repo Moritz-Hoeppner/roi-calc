@@ -10,9 +10,7 @@
 
     <link rel="stylesheet"
           href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/roi-calculator/jquery-ui-1.12.1/jquery-ui.min.css ">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-
-    <script>
+        <script>
         $(function () {
         });
     </script>
@@ -77,35 +75,35 @@
 
             <div class="res-roi-section-input-label-primary">Eingang von bestellung nach Medium*
             </div>
-            <div id="medium-percentage-container">
+            <div id="medium-percentage-container" class=" res-roi-percentage-input">
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">E-Mail</div>
-                    <input class="res-roi-section-input-number res-roi-input-all " type="number" id="percentage-mail" value="5">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="percentage-mail" value="5">
+                    <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Telefon</div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-phone" value="63">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="percentage-phone" value="63">
+                    <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Fax</div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-fax" value="24">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="percentage-fax" value="24">
+                    <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Eigenes Portal</div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="percentage-portal" value="8">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="percentage-portal" value="8">
+                    <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -120,33 +118,39 @@
             </div>
             <div class="res-roi-section-input-label-primary">Admindistrativer Aufwand pro Medium*
             </div>
+            <div class="res-roi-input-number-minutes">
             <div class="res-roi-input-container-number">
                 <div class="res-roi-section-input-label-secondary">E-Mail</div>
-                <input class="res-roi-section-input-number res-roi-input-all " id="workload-email" readonly value="2:30">
+                <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="workload-email" readonly value="2:30">
+                <div class="res-roi-section-label-unit">min</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
             </div>
             <div class="res-roi-input-container-number">
                 <div class="res-roi-section-input-label-secondary">Telefon</div>
-                <input class="res-roi-section-input-number res-roi-input-all" id="workload-phone" readonly value="4 m 45 s">
+                <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="workload-phone" readonly value="4 m 45 s">
+                <div class="res-roi-section-label-unit">min</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
             </div>
             <div class="res-roi-input-container-number">
                 <div class="res-roi-section-input-label-secondary">Fax</div>
-                <input class="res-roi-section-input-number res-roi-input-all" id="workload-fax" readonly value="4 m 45 s">
+                <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="workload-fax" readonly value="4 m 45 s">
+                <div class="res-roi-section-label-unit">min</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
             </div>
             <div class="res-roi-input-container-number">
                 <div class="res-roi-section-input-label-secondary">Portal</div>
-                <input class="res-roi-section-input-number" id="workload-portal" readonly value="4 m 45 s">
+                <input class="res-roi-section-input-number res-roi-section-input-number-unit" id="workload-portal" readonly value="4 m 45 s">
+                <div class="res-roi-section-label-unit">min</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
+            </div>
             </div>
         </section>
 
@@ -160,6 +164,7 @@
                     <div class="res-roi-section-input-label-secondary">Öffnen der E Mail
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-open" value="5">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -168,6 +173,7 @@
                     <div class="res-roi-section-input-label-secondary">E-Mail Lesen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-reading" value="40">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -176,6 +182,7 @@
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-process" value="180">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -184,6 +191,7 @@
                     <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-acceptOrder" value="60">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -192,6 +200,7 @@
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="email-other" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -200,6 +209,7 @@
                     <div class="res-roi-section-input-label-secondary">Total
                     </div>
                     <input class="res-roi-section-input-number-total" readonly id="email-total" value="2:30">
+                    <div class="res-roi-section-label-unit">min</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -218,7 +228,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Telefonat annehmen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-accept" value="30" s>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-accept" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -227,6 +238,7 @@
                     <div class="res-roi-section-input-label-secondary">Informationen aufnehmen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-noting" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -235,6 +247,7 @@
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-process" value="180">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -243,6 +256,7 @@
                     <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-acceptOrder" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -251,6 +265,7 @@
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="phone-other" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -259,6 +274,7 @@
                     <div class="res-roi-section-input-label-secondary">Total
                     </div>
                     <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="phone-total" value="2:30">
+                    <div class="res-roi-section-label-unit">min</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -277,7 +293,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Fax empfangen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-open" value="10" s>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-receive" value="10" s>
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -285,7 +302,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Fax lesen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-reading" value="60">
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-read" value="60">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -294,6 +312,7 @@
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System verarbeiten
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-process" value="180">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -302,6 +321,7 @@
                     <div class="res-roi-section-input-label-secondary">Auftragsbestätigung faxen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-acceptOrder" value="120">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -310,6 +330,7 @@
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="fax-other" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -318,6 +339,7 @@
                     <div class="res-roi-section-input-label-secondary">Total
                     </div>
                     <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="fax-total" value="2:30">
+                    <div class="res-roi-section-label-unit">min</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -336,7 +358,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Portal Öffnen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-öffnen" value="10" s>
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-open" value="10">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -345,6 +368,7 @@
                     <div class="res-roi-section-input-label-secondary">Daten in ERP System verarbeiten
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-process" value="180">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -353,6 +377,7 @@
                     <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-accept" value="60">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -361,6 +386,7 @@
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
                     <input class="res-roi-section-input-number res-roi-input-all" type="number" id="portal-other" value="30">
+                    <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -369,6 +395,7 @@
                     <div class="res-roi-section-input-label-secondary">Total
                     </div>
                     <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="portal-total" value="2:30">
+                    <div class="res-roi-section-label-unit">min</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -399,44 +426,43 @@
             <div class="res-roi-input-container-number">
                 <div class="res-roi-section-input-label-secondary">Wie viele Fehlfahrten fallen bei Ihnen pro Woche an?
                 </div>
-                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="amount-wront-trip">
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="amount-wrong-trip">
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
             </div>
             <div class="res-roi-input-container-number">
-                <div class="res-roi-section-input-label-secondary">Wie hoch sind die Kosten die durch eine Fehlfahrt
-                    anfallen?
-                </div>
-                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="cost-wrong-trip">
-                <div class="res-roi-steps-info">i
-                    <span class="res-roi-steps-info-tooltip">Wie viele Fehlfahrten fallen in Ihrem Unternhehmen pro Woche an?</span>
-                </div>
-            </div>
-            <div class="res-roi-input-container-number">
-                <div class="res-roi-section-input-label-secondary">Wie viel Zeitaufwand ist mit einer Fehlfahrt
-                    verbunden?
-                </div>
-                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="time-wrong-trip">
+                <div class="res-roi-section-input-label-secondary">Wie hoch sind die Kosten die durch eine Fehlfahrt anfallen?</div>
+                <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="reason-wrong-trip"  value="75">
+                <div class="res-roi-section-label-unit">€</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                 </div>
             </div>
+            <div class="res-roi-input-container-number">
+                <div class="res-roi-section-input-label-secondary">Wie viel Zeitaufwand ist mit einer Fehlfahrt verbunden?</div>
+                <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="time-wrong-trip"  value="30">
+                <div class="res-roi-section-label-unit">min</div>
+                <div class="res-roi-steps-info">i
+                    <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                </div>
+            </div>
+
             <div class="res-roi-section-input-label-primary">Aus welchen Gründen fallem Fehlfahrten an*
             </div>
-            <div id="reasons-wrong-pickups-percentage-container">
+            <div id="reasons-wrong-pickups-percentage-container" class=" res-roi-percentage-input">
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Falscher Container</div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="wrong-container" value="50">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="wrong-container" value="50">
+                    <div class="res-roi-section-label-unit ">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Container nicht zugänglich</div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="container-not-accesible" value="50">
-                    <div class="res-roi-section-label-percentage">%</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" type="number" id="container-not-accesible" value="50">
+                    <div class="res-roi-section-label-unit ">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -444,8 +470,8 @@
                 <div>
                     <div class="res-roi-input-container-number">
                         <div class="res-roi-section-input-label-secondary">Andere (Bitte spezifizieren)</div>
-                        <input class="res-roi-section-input-number" type="number" id="others" value="0">
-                        <div class="res-roi-section-label-percentage">%</div>
+                        <input class="res-roi-section-input-number res-roi-section-input-number-unit" type="number" id="others" value="0">
+                        <div class="res-roi-section-label-unit">%</div>
                         <div class="res-roi-steps-info">i
                             <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                         </div>
@@ -457,7 +483,7 @@
                 </div>
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Total</div>
-                    <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="reasons-wrong-pickups-total">
+                    <input class="res-roi-section-input-number-total" readonly id="reasons-wrong-pickups-total">
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
                     </div>
@@ -497,7 +523,7 @@
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="res-checkobx-section-container">
                         <label class="res-roi-section-input-checkbox-container">
                             <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked">
                             <span class="res-roi-section-input-checkbox-checkmark"></span>
@@ -537,7 +563,36 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="res-roi-input-container-GewAbfV-yes-no">
+                    <div class="res-roi-section-input-label-secondary">Erstellen Sie für Ihre Kunden eine Gewerbeabfallverordnung?</div>
+                    <div class="res-checkobx-section-container" >
+                        <label class="res-roi-section-input-checkbox-container">
+                            <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="GewAbfV-yes-no" checked="checked">
+                            <span class="res-roi-section-input-checkbox-checkmark"></span>
+                            <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Ja</div>
+                        </label>
+                    </div>
+                    <div class="res-checkobx-section-container">
+                        <label class="res-roi-section-input-checkbox-container">
+                            <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="GewAbfV-yes-no">
+                            <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        </label>
+                        <div class="res-roi-section-input-label-secondary">Nein</div>
+                    </div>
+                    <div>
+                        <div class="res-roi-steps-info" style="margin-top: -80px;">i
+                            <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-roi-input-container-number">
+                    <div class="res-roi-section-input-label-secondary">Wie lange brauchen Sie um eine GewAbfV zu erstellen?</div>
+                    <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit" id="time-GewAbfV" value="5">
+                    <div class="res-roi-section-label-unit">min</div>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
+                    </div>
+                </div>
             </div>
 
         </section>
