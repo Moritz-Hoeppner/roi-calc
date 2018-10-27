@@ -48,12 +48,11 @@ register_deactivation_hook( __FILE__, 'my_plugin_remove_database' );
 
 function plugin_activate() {
     echo("Plugin was activated");
-    roi-install();
-    postData();
+    roiInstall();
 }
 
 
-function roi-install(){
+function roiInstall(){
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
 
@@ -62,8 +61,66 @@ function roi-install(){
     $sql = "CREATE TABLE $table_name (
       id mediumint(9) NOT NULL AUTO_INCREMENT,
       time datetime DEFAULT '0000-00-00 00:00:00' NOT NULL,
-      name tinytext NOT NULL,
-      text text NOT NULL,
+      SessionID mediumint NOT NULL,
+      UserIP mediumint NOT NULL,
+      Finished tinyint(1) NOT NULL,
+      Orders_Week mediumint NULL,
+      ErpSystem varchar(200) NULL,
+      Percentage_Mail tinyint NULL,
+      Percentage_Phone tinyint NULL,
+      Percentage_Fax tinyint NULL,
+      Percentage_Portal tinyint NULL,
+      Workload_Mail_Open mediumint NULL,
+      Workload_Mail_Read mediumint NULL,
+      Workload_Mail_Process mediumint NULL,
+      Workload_Mail_Confirm mediumint NULL,
+      Workload_Mail_Other mediumint NULL,
+      Workload_Mail_Other_Value varchar(200) NULL,
+      Workload_Phone_Accept mediumint NULL,
+      Workload_Phone_Process mediumint NULL,
+      Workload_Phone_Confirm mediumint NULL,
+      Workload_Phone_Other mediumint NULL,
+      Workload_Phone_Other_Value varchar(200) NULL,
+      Workload_Fax_Recieve mediumint NULL,
+      Workload_Fax_Read mediumint NULL,
+      Workload_Fax_Process mediumint NULL,
+      Workload_Fax_Confirmd mediumint NULL,
+      Workload_Fax_Other mediumint NULL,
+      Workload_Fax_Other_Value  varchar(200) NULL,
+      Workload_Portal_Open mediumint NULL,
+      Workload_Portal_Process mediumint NULL,
+      Workload_Portal_Other mediumint NULL,
+      Workload_Portal_Other_Value varchar(200) NULL,
+      FalseRide_Amount mediumint NULL,
+      FalseRide_Cost mediumint NULL,
+      FalseRide_Time mediumint NULL,
+      FalseRide_Reason_WrongContainer tinyint NULL,
+      FalseRide_Reason_ContainerNotAccesible tinyint NULL,
+      FalseRide_Reason_Other tinyint NULL,
+      FalseRide_Reason_Other_Value varchar(200) NULL,
+      CustomerSatisfaction_WaitLoop mediumint NULL,
+      CustomerSatisfaction_WaitLoop_NoData tinyint(1) NULL,
+      CustomerSatisfaction_EasyOrder mediumint NULL,
+      CustomerSatisfaction_GewAbfV_Status tinyint(1) NULL,
+      CustomerSatisfaction_GewAbfV_Time mediumint NULL,
+      ItCosts_App mediumint NULL,
+      ItCosts_App_Pickup tinyint(1) NULL,
+      ItCosts_App_Multilocation tinyint(1) NULL,
+      ItCosts_App_Documentation tinyint(1) NULL,
+      ItCosts_App_Containershop tinyint(1) NULL,
+      ItCosts_App_Pushnotification tinyint(1) NULL,
+      ItCosts_App_OrderStatus tinyint(1) NULL,
+      ItCosts_App_Status tinyint(1) NULL,
+      ItCosts_App_Webapp tinyint(1) NULL,
+      ItCosts_App_IOS tinyint(1) NULL,
+      ItCosts_App_Android tinyint(1) NULL,
+      ItCosts_App_Other tinyint(1) NULL,
+      ItCosts_App_Other_Value tinyint(1) NULL,
+      ItCosts_Portal tinyint(1) NULL,
+      ItCosts_Portal_Cost tinyint(1) NULL,
+      Customer_Mail varchar(200) NULL,
+      Customer_Name varchar(200) NULL,
+      Customer_Phone varchar(200) NULL,      
       PRIMARY KEY  (id)
     ) $charset_collate;";
 

@@ -1251,8 +1251,11 @@ function startTransitionEffect(wizard, options, state, index, oldIndex, doneCall
  */
 function stepClickHandler(event)
 {
+    
+    //OWN EDIT!!!!!!!
     event.preventDefault();
 
+    console.log("steps");
     var anchor = $(this),
         wizard = anchor.parent().parent().parent().parent(),
         options = getOptions(wizard),

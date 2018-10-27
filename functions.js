@@ -1,3 +1,5 @@
+var developement = true;
+
 function setup(){
     modifyWizard();
     settingEventListeners();
@@ -33,7 +35,11 @@ $(document).ready(function () {
         transitionEffect: "slideLeft",
         stepsOrientation: "vertical",
         autoFocus: true,
+        enableKeyNavigation: false,
+        enablePagination: false,
+        suppressPaginationOnFocus: true,
         stepsContainerTag: "res-roi-section-steps-container",
+
 
     });
 });
@@ -44,11 +50,11 @@ function modifyWizard() {
         $(".actions").remove();
 
         $("#res-roi-button-previous").click(function () {
-            $("#res-roi-wizard").steps("previous");
+            GoPrevious("#res-roi-wizard-p-",".res-roi-input-all", ".res-roi-percentage-input");
         });
 
         $("#res-roi-button-next").click(function () {
-            checkIfAllowedToGoNext("#res-roi-wizard-p-",".res-roi-input-all", ".res-roi-percentage-input");
+            GoNext("#res-roi-wizard-p-",".res-roi-input-all", ".res-roi-percentage-input", "#res-roi-button-next", "#res-roi-button-previous", 4)
         });
 
         //    adding steps header
@@ -81,8 +87,11 @@ function settingEventListeners() {
         
 //        open specify menu on focus
         $("#workload-phone").focus(function () {
+            console.log("hey");
             OpenSpecifyMenu("#specification-menu-phone", "#res-roi-button-next", "#res-roi-button-previous");
         });
+
+
 
         //update Total Value of Time at the mail specification menu
         $("#specification-menu-phone .res-roi-section-input-number").change(function () {
@@ -93,7 +102,8 @@ function settingEventListeners() {
         $("#res-roi-button-phone-done").on('click', function () {
             CloseSpecifyMenu("#specification-menu-phone", "#res-roi-button-next", "#res-roi-button-previous", "#workload-phone", ".res-roi-section-input-number");
         });
-        
+
+
         
  //        ****Fax specify Menu ***
         
@@ -143,6 +153,17 @@ function settingEventListeners() {
             console.log("1");
         });
 
+        //        ****App specify Menu ***
+
+//        open specify menu on focus
+     $("#res-roi-app-adjust-button").click(function () {
+            OpenSpecifyMenu("#specification-menu-app-features", "#res-roi-button-next", "#res-roi-button-previous");
+        });
+
+        $("#res-roi-button-app-done").on('click', function () {
+            CloseSpecifyMenu("#specification-menu-app-features", "#res-roi-button-next", "#res-roi-button-previous", "", "");
+        });
+
         // set slider value
         $( "#amount-waiting-loop-slider" ).slider({
             slide: function() {
@@ -188,9 +209,10 @@ function controllTabSubMenu(OriginID, TargetID, ContainerIDOpen, ContainerIDClos
         if(event.which === 9){
             CloseSpecifyMenu(ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses);
             OpenSpecifyMenu(ContainerIDOpen, ElementOne, ElementTwo);
-            console.log(TargetID);
-            $(TargetID).focus();
+            console.log("Target ID: " +TargetID);
+            //$(TargetID).focus();
         }
+        else return "hi";
     })
 }
 
@@ -245,7 +267,6 @@ function OpenSpecifyMenu(ContainerID, HideElementOne, HideElementTwo) {
     $(ContainerID).css("position", "inherit");
     $(ContainerID).css("bottom", "0");
 
-    
 //    hiding buttons
     $(HideElementOne).css("visibility", "hidden");
     $(HideElementTwo).css("visibility", "hidden");
@@ -343,41 +364,45 @@ function currentClass(containerIDNameWithoutNumber){
 }
 
 function checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass){
-    let Inputfields = containerIDNameWithoutNumber + " " + inputElementClass;
+    if(developement) return true;
+    let Inputfields = currentClass(containerIDNameWithoutNumber) + " " + inputElementClass;
     let status = true;
     console.log("status: " + status);
     $(Inputfields).each(function() {
-        console.log($(this).val().length);
-        if($(this).val().length === 0){status= false;}
+        console.log($(this).val());
+
+        if($(this).val().length <= 0) {status= false;}
     });
-    if(status === true){
-        return true;
-    }
-    else{
-    return false;
-    }
+    return status === true;
 }
 
 function validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass) {
     percentageFields = currentClass(containerIDNameWithoutNumber) + " " + percentageContainer;
-    console.log(percentageFields);
-    console.log(inputElementClass);
     let sum = sumOfValues(percentageFields, inputElementClass);
-    if (sum === 100) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    console.log("class " + $(percentageFields).attr('class'));
+    return sum === 100 || $(percentageFields).attr('class') === undefined;
 }
 
-function checkIfAllowedToGoNext(containerIDNameWithoutNumber, inputElementClass, percentageContainer){
+function GoNext(containerIDNameWithoutNumber, inputElementClass, percentageContainer, HideElementOne, HideElementTwo, totalSteps){
     if(checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass) && validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass)){
         $("#res-roi-wizard").steps("next");
+        if(currentscreen()===totalSteps){
+            $(HideElementOne).css("visibility", "hidden");
+            $(HideElementTwo).css("visibility", "hidden");
+
+        }
     }
     else{
         if(!checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass)) alert("Please fill all fields");
         if(!validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass)) alert("Percent do not add up to 100%");
+    }
+
+}
+
+function GoPrevious(HideElement){
+
+    $("#res-roi-wizard").steps("previous");
+    if(currentscreen()===0){ $(HideElement).css("visibility", "hidden");
     }
 
 }
@@ -389,4 +414,5 @@ function collectingData(){
         console.log(($(this).val()));
     });
 }
+
 

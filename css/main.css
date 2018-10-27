@@ -13,6 +13,7 @@ ROI Calculator Style Sheet
             * container for the div surrounding the element including label, info tooltip etc.
             * 
 4.  Specification Menu
+5.  Auswertung
 
 +++++++++++++++++++++++++++
 +++++++++++++++++++++++++++
@@ -30,6 +31,10 @@ body{
     
 }
 
+p{
+    font-size: 14px;
+    line-height: 20px;
+}
 
 /*
 +++++++++++++++++++++++++++
@@ -73,10 +78,12 @@ res-roi-section-steps-container .number{
     width: 15px;
     border-radius: 10px;
     margin-right: 5px;
-    border: 1px solid #fff;
-    color: #fff;
+    border: 1px solid #969696;
+    color: #969696;
     text-align: center;
 }
+
+
 
 
 /*aligning heading and number*/
@@ -111,20 +118,44 @@ res-roi-section-steps-container .number{
 
 /*Steps Descrition if not active*/
 .current p{
-    font-size: 12px;
     margin-top: 0px;
     display: block !important;
 }
 
+.current h3{
+        text-decoration: underline;
+}
+
 /*Adjusting height of input containers if active*/
 .wizard.vertical > .steps > ul > .current {
-    height: 80px;
+    height: 110px;
 }
 
 /*Adjusting height of input containers if inactive*/
 .wizard.vertical > .steps > ul > li {
     height: 30px;
 }
+
+.wizard.vertical > .steps > ul > .done .res-roi-steps .res-number{
+    color: #fff;
+    border-color: #fff;
+}
+
+.wizard.vertical > .steps > ul > .current .res-roi-steps .res-number{
+    color: #fff;   
+    border-color: #fff;
+
+}
+
+#specification-menu-app-features .res-checkobx-section-container{
+        height: 30px;
+    
+}
+
+#specification-menu-app-features .res-roi-section-input-checkbox-checkmark {
+    top: 0;
+}
+
 
 
 /*
@@ -238,9 +269,20 @@ h2{
     opacity: 0.8;
 }
 
+.res-roi-specification-menu .res-roi-steps-info-tooltip{
+        right: 0px;
+}
+    
+
+    
 .res-roi-steps-info:hover .res-roi-steps-info-tooltip{
     visibility: visible;
 }
+
+#specification-menu-app-features .res-roi-steps-info{
+    margin-top: -17px;
+}
+
 
 /*
 +++++++++++++++++++++++++++
@@ -287,6 +329,25 @@ h2{
     right: 20px;
 }
 
+/*send evalutation button*/
+#res-roi-send-evalution-button{
+    width: 200px;
+    background-color: #579ACB;
+    color: #fff;
+    bottom: -7px;
+}
+
+#res-roi-app-adjust-button{
+    margin-top: 20px;
+    background-color: #2E6677;
+    color: #fff;
+    position: relative;
+    font-size: 14px;
+    height: 25px;
+    z-index: 0 !important;
+    line-height: 25px;
+    width: 150;
+}
 /*++    Number Input    ++*/
 
 /*container of number input containig label, input, infotooltip ... */
@@ -488,8 +549,6 @@ h2{
     margin-left: 30px;
 }
 
-
-}
 /*++    Select Input    ++*/
 
 /*Select input field Styling*/
@@ -536,3 +595,45 @@ h2{
     padding: 30px;
 }
 
+/*
++++++++++++++++++++++++++++
+5.  Auswertung 
++++++++++++++++++++++++++++
+*/
+
+.res-roi-evaluation-preview-container{
+    display: flex;
+    
+}
+
+.res-roi-evaluation-form-container{
+        box-shadow: -1px -12px 10px 0px #969696;
+        margin-top: 30px;
+        width: 100% !important;
+        position: absolute;
+        margin-left: -2.5%;
+        padding-left: 2.5%;
+}
+
+.res-roi-evaluation-form-container-content{
+    margin-left: 2.5%;
+    display: flex;
+}
+
+.res-roi-evaluation-form-container-content-input{
+    width: 600px;
+}
+
+.res-roi-evaluation-diagramm{
+    margin-right: 50px;
+    margin-left: 50px;
+    height: 250px;
+}
+
+.res-roi-evaluation-form-container-content-action-image{
+    background-color: grey;
+    height: 187px;
+    width: 134px;
+    margin-top: 88px;
+    margin-left: 32px;
+}
