@@ -1,8 +1,8 @@
-var developement = true;
+var developement = false;
 
 function setup() {
     if (developement) {
-        setFalseTrips("#FalseRide_Amount");
+        setFalseRide_Amount("#FalseRide_Amount");
         timeSavingsAdmin();
         costSavingFalseRides();
     }
@@ -55,17 +55,28 @@ function modifyWizard() {
         $(".actions").remove();
 
         $("#res-roi-button-previous").click(function () {
-            GoPrevious("#res-roi-wizard-p-", ".res-roi-input-all", ".res-roi-percentage-input");
+            GoPrevious("#res-roi-button-previous", "#res-roi-button-next", "#res-roi-button-start");
         });
 
         $("#res-roi-button-next").click(function () {
-            collectingData();
-            GoNext("#res-roi-wizard-p-", ".res-roi-input-all", ".res-roi-percentage-input", "#res-roi-button-next", "#res-roi-button-previous", 4)
+            GoNext("#res-roi-wizard-p-", ".res-roi-input-all", ".res-roi-percentage-input", "#res-roi-button-next", "#res-roi-button-previous", 5)
         });
+
+        $("#res-roi-button-start").click(function () {
+            StartRoi("#res-roi-wizard-p-", "#res-roi-button-next", "#res-roi-button-previous")
+        });
+
 
         //    adding steps header
         $("res-roi-section-steps-container").prepend("<div class=\"res-roi-steps-header\">Berechnen Sie Ihre Vorteile</div>")
 
+        $(".res-roi-steps-header").append("<div class=\"res-roi-disable-steps-action\"></div>")
+
+        $('[role="tablist"] li:eq(1)').css('border-top', '1px solid rgba(255, 255, 2555, .5)');
+        $('[role="tablist"] li:eq(1)').css('margin-top', '10px');
+        $('[role="tablist"] li:eq(1)').css('padding-top', '10px');
+        $('[role="tablist"] li:eq(4)').css('margin-bottom', '10px');
+        $('[role="tablist"] li:eq(5)').css('border-top', '1px solid rgba(255, 255, 2555, .5)');
     });
 }
 
@@ -77,6 +88,7 @@ function settingEventListeners() {
 //        open specify menu on focus
         $("#Workload_Mail").focus(function () {
             OpenSpecifyMenu("#specification-menu-email", "#res-roi-button-next", "#res-roi-button-previous");
+            $("#Workload_Mail_Open").focus();
         });
 
         //update Total Value of Time at the mail specification menu
@@ -91,9 +103,12 @@ function settingEventListeners() {
 
 //        ****Phone specify Menu ***
 
+
 //        open specify menu on focus
         $("#Workload_Phone").focus(function () {
             OpenSpecifyMenu("#specification-menu-phone", "#res-roi-button-next", "#res-roi-button-previous");
+            $("#Workload_Phone_Accept").focus();
+
         });
 
 
@@ -158,62 +173,93 @@ function settingEventListeners() {
 
 //        open specify menu on focus
         $("#res-roi-app-adjust-button").click(function () {
+            if($("[name=ItCosts_App_Status]:checked").val()==="false"){
+                return;
+            }
             OpenSpecifyMenu("#specification-menu-app-features", "#res-roi-button-next", "#res-roi-button-previous");
         });
+
+
+
+
 
         $("#res-roi-button-app-done").on('click', function () {
             CloseSpecifyMenu("#specification-menu-app-features", "#res-roi-button-next", "#res-roi-button-previous", "", "");
         });
 
         //jump to specify menu email when tab pressed on eigensportal percentage
-        controllTabSubMenu("#percentage-portal", "#Workload_Mail_Open", "#specification-menu-email", "", "#res-roi-button-next", "#res-roi-button-previous", "", "");
 
         //jump to specify menu phone when tab pressed on email other
-        controllTabSubMenu("#Workload_Mail_Other", "#Workload_Phone_Accept", "#specification-menu-phone", "#specification-menu-email", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Mail", ".res-roi-section-input-number");
+        controllTabSubMenuLast("#Workload_Mail_Other", "#Workload_Phone_Accept", "#specification-menu-phone", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Mail", ".res-roi-section-input-number");
 
         //jump to specify menu phone when tab pressed on email other
-        controllTabSubMenu("#Workload_Phone_Other", "#fax-receive", "#specification-menu-fax", "#specification-menu-phone", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Phone", ".res-roi-section-input-number");
+        controllTabSubMenuLast("#Workload_Phone_Other", "#Workload_Fax_Recieve", "#specification-menu-fax", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Phone", ".res-roi-section-input-number");
 
         //jump to specify menu phone when tab pressed on email other
-        controllTabSubMenu("#Workload_Fax_Other", "#Workload_Portal_Open", "#specification-menu-portal", "#specification-menu-fax", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Fax", ".res-roi-section-input-number");
+        controllTabSubMenuLast("#Workload_Fax_Other", "#Workload_Portal_Open", "#specification-menu-portal", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Fax", ".res-roi-section-input-number");
 
-        controllTabSubMenuLast("#Workload_Portal_Other", "#orders-week", "#specification-menu-portal", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Fax", ".res-roi-section-input-number");
+        controllTabSubMenuLast("#Workload_Portal_Other", "#Orders_Week", "#specification-menu-portal", "#res-roi-button-next", "#res-roi-button-previous", "#Workload_Fax", ".res-roi-section-input-number");
+
+
+        //disable tab
+        disableTab('#Percentage_Portal');
+
+        //diable textboxes if radio button is false
+        $('input[type=radio][name=CustomerSatisfaction_GewAbfV_Status]').change(function() {
+            if($("[name=CustomerSatisfaction_GewAbfV_Status]:checked").val()==="true"){
+                $("#CustomerSatisfaction_GewAbfV_Time").prop("readonly",false);
+            }
+            else{
+                $("#CustomerSatisfaction_GewAbfV_Time").prop("readonly",true);
+            }
+
+        });
+
+        $('input[type=radio][name=ItCosts_Portal_Status]').change(function() {
+            if($("[name=ItCosts_Portal_Status]:checked").val()==="true"){
+                $("#ItCosts_Portal_Cost").prop("readonly",false);
+            }
+            else{
+                $("#ItCosts_Portal_Cost").prop("readonly",true);
+            }
+
+        });
 
     });
 }
 
 //Jump to specific field on tab
-function controllTabSubMenu(OriginID, TargetID, ContainerIDOpen, ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses) {
-    $(OriginID).keydown(function (event) {
-        if (event.which === 9) {
-            CloseSpecifyMenu(ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses);
-            OpenSpecifyMenu(ContainerIDOpen, ElementOne, ElementTwo);
-            //$(TargetID).focus();
-        }
-        else return "hi";
-    })
+
+function disableTab(OriginID) {
+    $(OriginID).on('keydown', function (e) {
+        if (e.keyCode == 9) e.preventDefault();
+    });
 }
 
 function controllTabSubMenuLast(OriginID, TargetID, ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses) {
+    $(OriginID).on('keydown', function (e) {
+        if (e.keyCode == 9) e.preventDefault();
+    });
     $(OriginID).keydown(function (event) {
         if (event.which === 9) {
             CloseSpecifyMenu(ContainerIDClose, ElementOne, ElementTwo, OutputFieldClass, InputFieldClasses);
-            //OpenSpecifyMenu(ContainerIDOpen, ElementOne, ElementTwo);
-            $(TargetID).focus();
         }
-    })
+    });
 }
 
 //creating slider inputs
 function createSliders() {
     $(document).ready(function () {
         $("#CustomerSatisfaction_WaitLoop_Slider").slider({
-            min: -5,
-            max: 105,
+            min: 0,
+            max: 100,
             value: 20,
             step: 5,
             slide: function () {
                 setSliderValueOutputPercent("#CustomerSatisfaction_WaitLoop", "#CustomerSatisfaction_WaitLoop_Slider");
+            },
+            change: function () {
+                setSliderValueOutputCustomer("#CustomerSatisfaction_CustomerAmount", "#CustomerSatisfaction_CustomerAmount_Slider");
             }
         })
         setSliderValueOutputPercent("#CustomerSatisfaction_WaitLoop", "#CustomerSatisfaction_WaitLoop_Slider");
@@ -223,9 +269,12 @@ function createSliders() {
         $("#CustomerSatisfaction_CustomerAmount_Slider").slider({
             min: 100,
             max: 5100,
-            value: 100,
+            value: 1000,
             step: 100,
             slide: function () {
+                setSliderValueOutputCustomer("#CustomerSatisfaction_CustomerAmount", "#CustomerSatisfaction_CustomerAmount_Slider");
+            },
+            change: function () {
                 setSliderValueOutputCustomer("#CustomerSatisfaction_CustomerAmount", "#CustomerSatisfaction_CustomerAmount_Slider");
             }
         })
@@ -234,11 +283,14 @@ function createSliders() {
 
     $(document).ready(function () {
         $("#CustomerSatisfaction_EasyOrder_Slider").slider({
-            min: -5,
-            max: 105,
+            min: 0,
+            max: 100,
             value: 50,
             step: 5,
             slide: function () {
+                setSliderValueOutputPercent("#CustomerSatisfaction_EasyOrder", "#CustomerSatisfaction_EasyOrder_Slider", "#specification-menu-email", "#res-roi-button-next", "#res-roi-button-previous");
+            },
+            change: function () {
                 setSliderValueOutputPercent("#CustomerSatisfaction_EasyOrder", "#CustomerSatisfaction_EasyOrder_Slider", "#specification-menu-email", "#res-roi-button-next", "#res-roi-button-previous");
             }
         })
@@ -253,7 +305,7 @@ function setSliderValueOutputPercent(TargetID, SliderID) {
 function setSliderValueOutputCustomer(TargetID, SliderID) {
     let val = $(SliderID).slider("value");
     let customers;
-    if (val === 5000) {
+    if (val > 4999) {
         customers = "5000+"
     }
     else {
@@ -261,11 +313,6 @@ function setSliderValueOutputCustomer(TargetID, SliderID) {
     }
     $(TargetID).val(customers);
 }
-
-function setSliderValue(SourceID, SliderID) {
-    $(SliderID).slider("value", $(SourceID).val());
-}
-
 //open specify menu
 function OpenSpecifyMenu(ContainerID, HideElementOne, HideElementTwo) {
     $(ContainerID).css("position", "inherit");
@@ -278,8 +325,9 @@ function OpenSpecifyMenu(ContainerID, HideElementOne, HideElementTwo) {
 
 //close specify menu
 function CloseSpecifyMenu(ContainerID, ShowElementOne, ShowElementTwo, TargetID, InputFieldClasses) {
+
     $(ContainerID).css("position", "absolute");
-    $(ContainerID).css("bottom", "-10000");
+    $(ContainerID).css("bottom", "-10000px");
 //    hiding buttons
     $(ShowElementOne).css("visibility", "visible");
     $(ShowElementTwo).css("visibility", "visible");
@@ -305,7 +353,7 @@ function setTotalTime(TargetID, ContainerID, InputFieldClasses) {
     $(TargetID).val(secondsTimeSpanToMS(sumOfValues(ContainerID, InputFieldClasses)));
 }
 
-function secondstoHoursandMinutes(time) {
+function secondsToHoursAndMinutes(time) {
     // Hours, minutes and seconds
     var hrs = ~~(time / 3600);
     var mins = ~~((time % 3600) / 60);
@@ -343,8 +391,8 @@ function setPercentageTotal(TargetID, ContainerID, InputFieldClasses) {
     $(Target).val(sumOfValues(ContainerID, InputFieldClasses) + "%");
 }
 
-function setFalseTrips(TargetID) {
-    let constants = resRoiconstants();
+function setFalseRide_Amount(TargetID) {
+    let constants = resRoiConstants();
     let data = collectingData();
 
     let val = data.Orders_Week * constants.percentageFalseTrips;
@@ -365,8 +413,7 @@ function percentageValidation(TargetID, ContainerID, InputFieldClasses) {
 
 
 function currentscreen() {
-    let currentstep = $("#res-roi-wizard").steps("getCurrentIndex");
-    return currentstep;
+    return $("#res-roi-wizard").steps("getCurrentIndex");
 }
 
 function currentClass(containerIDNameWithoutNumber) {
@@ -384,8 +431,14 @@ function currentClass(containerIDNameWithoutNumber) {
         case 3:
             currentClass = containerIDNameWithoutNumber + "3";
             break;
+        case 4:
+            currentClass = containerIDNameWithoutNumber + "3";
+            break;
+        case 5:
+            currentClass = containerIDNameWithoutNumber + "3";
+            break;
         default:
-            alert("We are sorry but something went wrong, please reload")
+            alert("This is my title","We are sorry but something went wrong, please reload")
     }
     return (currentClass);
 }
@@ -409,8 +462,9 @@ function validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentage
 }
 
 function GoNext(containerIDNameWithoutNumber, inputElementClass, percentageContainer, HideElementOne, HideElementTwo, totalSteps) {
+    makePost();
     if (checkIfInputIsSet(containerIDNameWithoutNumber, inputElementClass) && validatingPercentageBeforeNext(containerIDNameWithoutNumber, percentageContainer, inputElementClass)) {
-        setFalseTrips("#FalseRide_Amount");
+        setFalseRide_Amount("#FalseRide_Amount");
         $("#res-roi-wizard").steps("next");
         if (currentscreen() === totalSteps) {
             $(HideElementOne).css("visibility", "hidden");
@@ -425,11 +479,21 @@ function GoNext(containerIDNameWithoutNumber, inputElementClass, percentageConta
 
 }
 
-function GoPrevious(HideElement) {
+function StartRoi(containerIDNameWithoutNumber, ShowElementOne, ShowElementTwo) {
+    makePost();
+    $("#res-roi-wizard").steps("next");
+    $(ShowElementOne).css("visibility", "visible");
+    $(ShowElementTwo).css("visibility", "visible");
+}
+
+function GoPrevious(HideElementOne, HideElementTwo, ShowElementOne ) {
 
     $("#res-roi-wizard").steps("previous");
     if (currentscreen() === 0) {
-        $(HideElement).css("visibility", "hidden");
+        $(HideElementOne).css("visibility", "hidden");
+        $(HideElementTwo).css("visibility", "hidden");
+        $(ShowElementOne).css("visibility", "inherit");
+
     }
 
 }
@@ -446,11 +510,15 @@ function collectingData() {
 
     let hubspotutk = getCookie("hubspotutk");
     if (hubspotutk === "") {
-        hssc = "not found"
+        hubspotutk = "not found"
     }
+
     formData["hubspotutk"] = hubspotutk;
 
-    formData["General_Step"] = currentscreen();
+    formData["ErpSystem"] = $('#ErpSystem').val();
+
+    //let currentScreen = currentscreen();
+    //formData["General_Step"] = currentScreen;
 
     $(".res-roi-input-all").each(function () {
         let name = $(this).attr('id');
@@ -485,26 +553,7 @@ function collectingData() {
     return formData;
 }
 
-function timeSavingsAdmin() {
-    let formData = collectingData();
-    console.log(formData);
-    console.log("Percentage_Mail: " + formData.Percentage_Mail);
-    timeMail = (formData.Orders_Week * (formData.Percentage_Mail / 100)) * sumOfValues("#specification-menu-mail", ".res-roi-section-input-number");
-    timePhone = (formData.Orders_Week * (formData.Percentage_Phone / 100)) * sumOfValues("#specification-menu-phone", ".res-roi-section-input-number");
-    timeFax = (formData.Orders_Week * (formData.Percentage_Fax / 100)) * sumOfValues("#specification-menu-fax", ".res-roi-section-input-number");
-    timePortal = (formData.Orders_Week * (formData.Percentage_Portal / 100)) * sumOfValues("#specification-menu-portal", ".res-roi-section-input-number");
-
-    console.log(timePhone);
-    totaltime = secondstoHoursandMinutes(timePhone + timeMail + timeFax + timePortal);
-    console.log(totaltime);
-}
-
-function hoursToMoney(hours) {
-    let formData = collectingData();
-    return formData.Cost_Depsoition * hours;
-}
-
-function resRoiconstants() {
+function resRoiConstants() {
     let constants = {
         "reducedFalseRideWrongContainer": 0.5,
         "reducedFalseRideWrongContainerContainerNotAccesible": 0.5,
@@ -527,8 +576,37 @@ function resRoiconstants() {
     return constants;
 }
 
+function calculationResults() {
+    var results = {};
+
+    results["AdminTimeSaved"] = timeSavingsAdmin();
+    results["AdminCostSaved"] = hoursToMoney(timeSavingsAdmin());
+    results["FalseRidesCostSaved"] = costSavingFalseRides();
+    results["timeSavedGewAbf"] = timeSavingsCustomerSatisfactionGewAbf();
+    results["DevelopementCostSaved"] = developementCostSavingItCost();
+    results["AdminTimeSaved"] = timeSavingsAdmin();
+    results["FalseRidesSaved"] = savedFalseRides();
+    results["FalseRidesSavedCost"] = savedFalseRidesCost();
+    return results;
+}
+
+function timeSavingsAdmin() {
+    let formData = collectingData();
+    timeMail = (formData.Orders_Week * (formData.Percentage_Mail / 100)) * sumOfValues("#specification-menu-email", ".res-roi-section-input-number");
+    timePhone = (formData.Orders_Week * (formData.Percentage_Phone / 100)) * sumOfValues("#specification-menu-phone", ".res-roi-section-input-number");
+    timeFax = (formData.Orders_Week * (formData.Percentage_Fax / 100)) * sumOfValues("#specification-menu-fax", ".res-roi-section-input-number");
+    timePortal = (formData.Orders_Week * (formData.Percentage_Portal / 100)) * sumOfValues("#specification-menu-portal", ".res-roi-section-input-number");
+    totaltime = secondsToHoursAndMinutes(timePhone + timeMail + timeFax + timePortal);
+    return totaltime;
+}
+
+function hoursToMoney(hours) {
+    let formData = collectingData();
+    return formData.Cost_Depsoition * hours;
+}
+
 function costSavingFalseRides() {
-    let constant = resRoiconstants();
+    let constant = resRoiConstants();
     let formData = collectingData();
 
     let WrongContainerReducedFalseRides = formData.FalseRide_Amount * (formData.FalseRide_Reason_WrongContainer / 100) * constant.reducedFalseRideWrongContainer;
@@ -552,11 +630,10 @@ function timeSavingsCustomerSatisfactionGewAbf() {
 
 function developementCostSavingItCost() {
     let formData = collectingData();
-    let constant = resRoiconstants();
+    let constant = resRoiConstants();
     let cost = 0;
     if (formData.CustomerSatisfaction_GewAbfV_Status === 1) {
         for (x in constant.ItCosts_App) {
-            console.log(formData[x]);
             if (formData[x] === 1) {
                 cost += constant.ItCosts_App[x];
             }
@@ -581,3 +658,41 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function customersLost() {
+    let formData = collectingData();
+
+
+}
+
+function savedFalseRides() {
+    let formData = collectingData();
+    let constant = resRoiConstants();
+
+    return formData.Orders_Week * constant.percentageFalseTrips;
+}
+
+function savedFalseRidesCost() {
+    let data = collectingData();
+    let constant = resRoiConstants();
+    return data.Orders_Week * constant.percentageFalseTrips * data.FalseRide_Cost;
+}
+
+function makePost() {
+    let formData = collectingData();
+
+    $.ajax({
+        type: "POST",
+        url: wpa_data.admin_ajax,
+        dataType: "json",
+        data: {
+            "action": "some_action",
+            "formdata": formData,
+        },
+        success: function () {
+            //get permalink for post from php and go to it
+        }
+    });
+
+}
+

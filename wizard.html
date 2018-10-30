@@ -1,38 +1,3 @@
-<head>
-    <meta charset="UTF-8">
-    <!--local-->
-<!--
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/res-roi/jquery.steps-1.1.0/jquery.steps.js"></script>
-    <script src="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/res-roi/functions.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/res-roi/css/jquery.steps.css">
-    <link rel="stylesheet" type="text/css"
-          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/res-roi/css/main.css">
-
-    <link rel="stylesheet"
-          href="/Applications/MAMP/htdocs/resourcify.de/wp-content/plugins/res-roi/jquery-ui-1.12.1/jquery-ui.min.css ">
-
-    <!--Server-->
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="jquery.steps-1.1.0/jquery.steps.js"></script>
-    <script src="functions.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.steps.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.min.css ">
-
-    <script>
-        $(function () {
-        });
-    </script>
-
-</head>
-
-
-<body>
-
 <div id="res-roi-wizard-container">
     <div id="res-roi-wizard">
 
@@ -49,11 +14,59 @@
         <div class="res-roi-section-steps-label">
             <div class="res-roi-steps">
                 <div class="res-roi-steps-numbering">
+                    <div class="res-number"
+                         style="background-color: inherit !important; color: #fff !important; border: 1px solid #fff !important">
+                        A
+                    </div>
+                </div>
+                <div class="res-roi-steps-text">
+                    <h3>Anleitung</h3>
+
+                    <p>Durch Automatisierung und Kommunikation mit moderne Hilfsmittel (z.B. die Mein-Recycling App)
+                        entfallen zeitintensive Telefonate, E-Mail und Fax Kommunikation.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <section>
+            <div class="res-roi-introduction-container">
+                <div style="border: 1px solid #707070; display: block; height: 122px;">
+                    <div  style="float: left;">
+                        <img src="https://www.resourcify.de/wp-content/uploads/2018/10/Screenshot-2018-10-30-at-11.23.13.png" height="120px" style="height: 120px;">
+                    </div>
+                    <div style="float: right;">
+                        <img src="https://www.resourcify.de/wp-content/uploads/2018/10/Screenshot-2018-10-30-at-11.27.37.png" height="120px" style="height: 120px;">
+                    </div>
+                </div>
+
+                <p style="float: left">
+                    Direkte Online-Kommunikation mit Ihren Kunden. Auftragsverwaltung, Abholungen, Dokumentation.
+                    Klick und fertig!
+
+                    Start taking your orders digitally with the PRX and your branded version of the Mein Recycling App.
+                    Use the ROI Estimator to see how much money you could start saving your business.
+                    <br>
+                    <br>
+                    Start taking your orders digitally with the PRX and your branded version of the Mein Recycling App. Use the ROI Estimator to see how much money you could start saving your business.
+                </p>
+                <div class="res-roi-button" id="res-roi-button-start">Los Geht's</div>
+
+
+            </div>
+        </section>
+
+        <!-- - - - - - -  Section 1 - Admindistrative Einsparungen  - - - - - - -->
+
+        <div class="res-roi-section-steps-label">
+            <div class="res-roi-steps">
+                <div class="res-roi-steps-numbering">
                     <div class="res-number">1</div>
                 </div>
                 <div class="res-roi-steps-text">
                     <h3>Admindistrative Einsparungen</h3>
-                    <p>Durch Automatisierung und Kommunikation mit moderne Hilfsmittel (z.B. die Mein-Recycling App) entfallen zeitintensive Telefonate, E-Mail und Fax Kommunikation.</p>
+                    <p>Durch Automatisierung und Kommunikation mit moderne Hilfsmittel (z.B. die Mein-Recycling App)
+                        entfallen zeitintensive Telefonate, E-Mail und Fax Kommunikation.</p>
                 </div>
             </div>
         </div>
@@ -65,7 +78,7 @@
                 <div class="res-roi-section-input-label-secondary">Durchschnittles Bruttojahresgehalt Ihrer Disponenten
                 </div>
                 <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit"
-                       id="Cost_Depsoition" value="2500">
+                       id="Cost_Depsoition" value="5000" type="number">
                 <div class="res-roi-section-label-unit">€</div>
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
@@ -75,7 +88,8 @@
                 <div class="res-roi-section-input-label-secondary">Wie viele Bestellungen gehen bei Ihnen pro Woche
                     ein?* (Inklusive Rückrufe)
                 </div>
-                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Orders_Week" value="100">
+                <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Orders_Week"
+                       value="100">
                 <div class="res-roi-steps-info">i
                     <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                 </div>
@@ -114,7 +128,7 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Telefon</div>
                     <input class="res-roi-section-input-number res-roi-section-input-number-unit res-roi-input-all"
-                           type="number" id="Percentage_Phone" value="63" >
+                           type="number" id="Percentage_Phone" value="63">
                     <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">Bitte geben Sie in % an, wie viele Aufträge Sie per Telefon erhalten.</span>
@@ -132,14 +146,14 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Eigenes Portal</div>
                     <input class="res-roi-section-input-number res-roi-section-input-number-unit res-roi-input-all"
-                           type="number" id="Percentage_Portal" value="8" >
+                           type="number" id="Percentage_Portal" value="8">
                     <div class="res-roi-section-label-unit">%</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">Bitte geben Sie in % an, wie viele Aufträge Sie über Ihr eigenes Portal.</span>
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
-                    <div class="res-roi-section-input-label-secondary">Total</div>
+                    <div class="res-roi-section-input-label-secondary" style="font-weight: 700;">Total</div>
                     <input class="res-roi-section-input-number-total" readonly id="percentage-total">
                 </div>
             </div>
@@ -214,7 +228,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System bearbeiten
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Mail_Process"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Mail_Process"
                            value="180">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -224,7 +239,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Mail_Confirm"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Mail_Confirm"
                            value="60">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -242,7 +258,7 @@
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
-                    <div class="res-roi-section-input-label-secondary">Total
+                    <div class="res-roi-section-input-label-secondary" style="font-weight: 700;">Total
                     </div>
                     <input class="res-roi-section-input-number-total" readonly id="Workload_Mail_Total" value="2:30">
                     <div class="res-roi-section-label-unit">min</div>
@@ -261,7 +277,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Telefonat annehmen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Phone_Accept"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Phone_Accept"
                            value="30">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -281,7 +298,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System bearbeiten
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Phone_Process"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Phone_Process"
                            value="180">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -291,7 +309,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Auftrag bestätigen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Phone_Confirm"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Phone_Confirm"
                            value="30">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -301,7 +320,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Phone_Other"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Phone_Other"
                            value="30">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -329,8 +349,9 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Fax empfangen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Fax_Recieve"
-                           value="10" >
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Fax_Recieve"
+                           value="10">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">Durchschnittswert der Nutzer: 10sek </span>
@@ -349,7 +370,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Daten im ERP System bearbeiten
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Fax_Process"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Fax_Process"
                            value="180">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -359,7 +381,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Auftragsbestätigung faxen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Fax_Confirm"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Fax_Confirm"
                            value="120">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -377,7 +400,7 @@
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
-                    <div class="res-roi-section-input-label-secondary">Total
+                    <div class="res-roi-section-input-label-secondary" style="font-weight: 700;">Total
                     </div>
                     <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="Workload_Fax_Total"
                            value="2:30">
@@ -397,7 +420,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Portal Öffnen
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Portal_Open"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Portal_Open"
                            value="10">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -407,7 +431,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Daten in ERP System verarbeiten
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Portal_Process"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Portal_Process"
                            value="180">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -427,7 +452,8 @@
                 <div class="res-roi-input-container-number">
                     <div class="res-roi-section-input-label-secondary">Andere
                     </div>
-                    <input class="res-roi-section-input-number res-roi-input-all" type="number" id="Workload_Portal_Other"
+                    <input class="res-roi-section-input-number res-roi-input-all" type="number"
+                           id="Workload_Portal_Other"
                            value="30">
                     <div class="res-roi-section-label-unit">s</div>
                     <div class="res-roi-steps-info">i
@@ -435,7 +461,7 @@
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
-                    <div class="res-roi-section-input-label-secondary">Total
+                    <div class="res-roi-section-input-label-secondary" style="font-weight: 700;">Total
                     </div>
                     <input class="res-roi-section-input-number-total res-roi-input-all" readonly id="portal-total"
                            value="2:30">
@@ -519,7 +545,8 @@
                 <div>
                     <div class="res-roi-input-container-number">
                         <div class="res-roi-section-input-label-secondary">Andere (Bitte spezifizieren)</div>
-                        <input class="res-roi-section-input-number res-roi-section-input-number-unit" type="number"
+                        <input class="res-roi-section-input-number res-roi-input-all res-roi-section-input-number-unit"
+                               type="number"
                                id="FalseRide_Reason_Other" value="0">
                         <div class="res-roi-section-label-unit">%</div>
                         <div class="res-roi-steps-info">i
@@ -532,7 +559,7 @@
                     </div>
                 </div>
                 <div class="res-roi-input-container-number">
-                    <div class="res-roi-section-input-label-secondary">Total</div>
+                    <div class="res-roi-section-input-label-secondary" style="font-weight: 700;">Total</div>
                     <input class="res-roi-section-input-number-total" readonly id="FalseRide_Reason_Total">
                     <div class="res-roi-steps-info">i
                         <span class="res-roi-steps-info-tooltip">!!! I am the description of this point. Please give me a Proper text so and give me a prupuse in life !!!</span>
@@ -576,10 +603,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="res-checkobx-section-container">
+                    <div class="res-checkobx-section-container" style="display: flex;">
                         <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="CustomerSatisfaction_WaitLoop_NoData">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
+                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox"
+                                   name="CustomerSatisfaction_WaitLoop_NoData">
+                            <span class="res-roi-section-input-checkbox-checkmark" style="top: 0;"></span>
                         </label>
                         <div class="res-roi-section-input-label-secondary">Wir erfassen diese Daten noch nicht</div>
                     </div>
@@ -626,16 +654,18 @@
                     </div>
                     <div class="res-checkobx-section-container">
                         <label class="res-roi-section-input-checkbox-container">
-                            <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="CustomerSatisfaction_GewAbfV_Status"
+                            <input type="radio" class="res-roi-section-input-checkbox-checkbox"
+                                   name="CustomerSatisfaction_GewAbfV_Status"
                                    checked="checked" value="true">
                             <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Ja</div>
+                            <div class="res-roi-section-input-label-secondary">Ja</div>
                         </label>
                     </div>
-                    <div class="res-checkobx-section-container">
+                    <div class="res-checkobx-section-container" style="margin-top: -16px;">
                         <label class="res-roi-section-input-checkbox-container">
-                            <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="CustomerSatisfaction_GewAbfV_Status" value="false">
-                            <span class="res-roi-section-input-checkbox-checkmark" ></span>
+                            <input type="radio" class="res-roi-section-input-checkbox-checkbox"
+                                   name="CustomerSatisfaction_GewAbfV_Status" value="false">
+                            <span class="res-roi-section-input-checkbox-checkmark"></span>
                         </label>
                         <div class="res-roi-section-input-label-secondary">Nein</div>
                     </div>
@@ -661,7 +691,6 @@
         </section>
 
 
-
         <!-- - - - - - - Section 4 - Eigene IT Einsparungen  - - - - - - -->
 
         <div class="res-roi-section-steps-label">
@@ -685,14 +714,15 @@
                         <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_Portal_Status"
                                checked="checked" value="true">
                         <span class="res-roi-section-input-checkbox-checkmark"></span>
-                        <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Ja</div>
+                        <div class="res-roi-section-input-label-secondary">Ja</div>
                     </label>
                 </div>
                 <div class="res-checkobx-section-container">
                     <label class="res-roi-section-input-checkbox-container">
-                        <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_Portal_Status" value="false">
+                        <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_Portal_Status"
+                               value="false">
                         <span class="res-roi-section-input-checkbox-checkmark"></span>
-                        <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Nein</div>
+                        <div class="res-roi-section-input-label-secondary">Nein</div>
                     </label>
                 </div>
                 <div>
@@ -720,14 +750,15 @@
                         <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_App_Status"
                                checked="checked" value="true">
                         <span class="res-roi-section-input-checkbox-checkmark"></span>
-                        <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Ja</div>
+                        <div class="res-roi-section-input-label-secondary">Ja</div>
                     </label>
                 </div>
                 <div class="res-checkobx-section-container">
                     <label class="res-roi-section-input-checkbox-container">
-                        <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_App_Status" value="false">
+                        <input type="radio" class="res-roi-section-input-checkbox-checkbox" name="ItCosts_App_Status"
+                               value="false">
                         <span class="res-roi-section-input-checkbox-checkmark"></span>
-                        <div class="res-roi-section-input-label-secondary" style="margin-top: 9px;">Nein</div>
+                        <div class="res-roi-section-input-label-secondary">Nein</div>
                     </label>
                 </div>
                 <div>
@@ -749,116 +780,127 @@
             </div>
             <div class="res-roi-specification-menu">
                 <h4>Welche Funktionen sollte Ihre App haben?</h4>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Pickup">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Abholung auf Knopfdruck</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Pickup">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Abholung auf Knopfdruck</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Multilocation">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Mehrere Standorte pro Unternehmen</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Multilocation">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Mehrere Standorte pro Unternehmen</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Documentation">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Dokumentation der GewAbfV</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Documentation">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Dokumentation der GewAbfV</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Containershop">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Containershop</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Containershop">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Containershop</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Pushnotification">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Pushnotificatoins</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Pushnotification">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Pushnotificatoins</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_OrderStatus">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Bestellstatus Anzeige</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_OrderStatus">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Bestellstatus Anzeige</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_API">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Schnittstelle</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_API">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Schnittstelle</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Webapp">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Webapp</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Webapp">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Webapp</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_IOS">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">IOS</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_IOS">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">IOS</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Android">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Android</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Android">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Android</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
-                    <div class="res-checkobx-section-container">
-                        <label class="res-roi-section-input-checkbox-container">
-                            <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked" name="ItCosts_App_Other">
-                            <span class="res-roi-section-input-checkbox-checkmark"></span>
-                            <div class="res-roi-section-input-label-secondary">Andere</div>
-                        </label>
-                        <div class="res-roi-steps-info">i
-                            <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
-                        </div>
+                </div>
+                <div class="res-checkobx-section-container">
+                    <label class="res-roi-section-input-checkbox-container">
+                        <input type="checkbox" class="res-roi-section-input-checkbox-checkbox" checked="checked"
+                               name="ItCosts_App_Other">
+                        <span class="res-roi-section-input-checkbox-checkmark"></span>
+                        <div class="res-roi-section-input-label-secondary">Andere</div>
+                    </label>
+                    <div class="res-roi-steps-info">i
+                        <span class="res-roi-steps-info-tooltip">Bitte geben SIe hier die Anzahl der durchschnittlichen wöchentlichen Bestellungen an. </span>
                     </div>
+                </div>
 
             </div>
             <div class="res-roi-button res-roi-button-done" id="res-roi-button-app-done">Fertig</div>
@@ -871,80 +913,80 @@
         <div class="res-roi-section-steps-label">
             <div class="res-roi-steps">
                 <div class="res-roi-steps-numbering">
-                    <div class="res-number">5</div>
+                    <div class="res-number" style="    background-color: inherit !important; color: #fff !important; border: 1px solid #fff !important;
+">$
+                    </div>
                 </div>
                 <div class="res-roi-steps-text">
                     <h3>Auswertung</h3>
-                    <p>Die PRX nimmt übernimmt für Sie die Kundenkommunikation. psum dolor sit amet, consetetur
-                        sadipscing elitr, sed diam nonumy eirmod tempor invidunt </p>
                 </div>
             </div>
         </div>
         <section>
-            <h2>Schnellübersicht</h2>
             <div class="res-roi-evaluation-preview-container">
+            <h2>Schnellübersicht</h2>
+
+            <div class="res-roi-evaluation-preview-container-text-image">
                 <div class="res-roi-evaluation-text">
                     <p>
-                        <span id="res-roi-evaluation-summaryText">Durch die direke Verbingung von der Mein-Recycling App und der PRX bleibt Ihnen die Arbeit erspart Aufträge manuell engegen zunehmen.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </span>
+                        <span id="res-roi-evaluation-summaryText">Bieten Sie Ihren Kunden einen virtuellen Entsorgungs-Assistenten, mit dem Ihre Kunden alle Abfälle und Abholungen einfach bestellen und eine gesetzeskonforme Dokumentation gemäß der Gewerbeabfallverordnung durchführen können. Sowohl Turnus- als auch Einzelaufträge werden an die PRX übermittelt und von Ihnen bestätgt. Die gesetzeskonforme Dokumentation der Gewerbeabfallverordnung steht dabei dem Kunden jederzeit zur Ansicht und zum Download zur Verfügung. </span>
                     </p>
                 </div>
                 <div class="res-roi-evaluation-diagramm">
                     <img src="https://image-charts.com/chart?chtt=Vorteile nach Sektor&cht=pd&chd=t:30,10,5&chs=250x250&chdl=E-Mail|Telefon|Fax&chl=30h|10h|5h&chli=45h&chan&chco=309D60|2E6677|579ACB">
                 </div>
             </div>
-            <div class="res-roi-evaluation-form-container">
-                <div class="res-roi-evaluation-form-container-content">
-                    <div class="res-roi-evaluation-form-container-content-input">
-                        <h2>Detaillierter Bericht</h2>
-                        <p>Wir haben Ihenen einen Individuellen Bericht erstellt der Ihnen die Ersparungen durch nutzung
-                            der
-                            PRX
-                            zeigt.</p>
-                        <div>
-                            <div class="res-roi-input-container-number">
-                                <div class="res-roi-section-input-label-secondary">Email</div>
-                            </div>
-                            <div class="res-roi-input-container-text">
-                                <input class="res-roi-section-input-text" type="text" id="customer-mail"
-                                       placeholder="geschäftsleitung@unternehmen.de">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="res-roi-input-container-number">
-                                <div class="res-roi-section-input-label-secondary">Name und Vorname</div>
-                            </div>
-                            <div class="res-roi-input-container-text">
-                                <input class="res-roi-section-input-text" type="text" id="Customer_Name"
-                                       placeholder="Name Vorname">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="res-roi-input-container-number">
-                                <div class="res-roi-section-input-label-secondary">Telefon</div>
-                            </div>
-                            <div class="res-roi-input-container-text">
-                                <input class="res-roi-section-input-text" type="text" id="Customer_Mail"
-                                       placeholder="0176 0123456">
-                            </div>
-
-                        </div>
+            </div>
+            <div class="res-roi-evaluation-form-container-content">
+            <div class="res-roi-evaluation-form-container-content-input">
+                <h2>Detaillierter Bericht</h2>
+                <p>Wir haben Ihenen einen Individuellen Bericht erstellt der Ihnen die Ersparungen durch nutzung
+                    der
+                    PRX
+                    zeigt.</p>
+                <div>
+                    <div class="res-roi-input-container-number">
+                        <div class="res-roi-section-input-label-secondary">Email</div>
                     </div>
-                    <div class="res-roi-evaluation-form-container-content-action">
-                        <div class="res-roi-evaluation-form-container-content-action-image">
-                        </div>
-                        <div class="res-roi-button" id="Customer_Phone"> Bericht zusenden
-                        </div>
+                    <div class="res-roi-input-container-text">
+                        <input class="res-roi-section-input-text" type="text" id="customer-mail"
+                               placeholder="geschäftsleitung@unternehmen.de">
                     </div>
                 </div>
+
+                <div>
+                    <div class="res-roi-input-container-number">
+                        <div class="res-roi-section-input-label-secondary">Name und Vorname</div>
+                    </div>
+                    <div class="res-roi-input-container-text">
+                        <input class="res-roi-section-input-text" type="text" id="Customer_Name"
+                               placeholder="Name Vorname">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="res-roi-input-container-number">
+                        <div class="res-roi-section-input-label-secondary">Telefon</div>
+                    </div>
+                    <div class="res-roi-input-container-text">
+                        <input class="res-roi-section-input-text" type="text" id="Customer_Mail"
+                               placeholder="0176 0123456">
+                    </div>
+
+                </div>
+            </div>
+            <div class="res-roi-evaluation-form-container-content-action">
+                <div class="res-roi-evaluation-form-container-content-action-image">
+                </div>
+                <div class="res-roi-button" id="res-roi-send-evalution-button"> Bericht zusenden
+                </div>
+            </div>
             </div>
 
         </section>
 
     </div>
 </div>
-</body>
 
 
 <script>

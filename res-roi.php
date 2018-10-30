@@ -1,7 +1,4 @@
 <?php
-/**
- * @package Akismet
- */
 /*
 Plugin Name: ROI Calculator
 Plugin URI: TODO
@@ -45,10 +42,77 @@ define( 'RES-ROI_DELETE_LIMIT', 100000 );*/
 register_activation_hook( 'res-roi/res-roi.php', 'plugin_activate' );
 register_deactivation_hook( 'res-roi/res-roi.php', 'plugin_unistall' );
 register_uninstall_hook('res-roi/res-roi.php' , 'plugin_unistall');
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
+
+add_action( 'wp_ajax_some_action', 'my_ajax_handler' );
+add_action( 'wp_ajax_nopriv_some_action', 'my_ajax_handler' );
+
+
+
+
+
+function wpb_adding_scripts() {
+
+    wp_enqueue_script('jquery.js', plugins_url('jquery.js', __FILE__),'1.1', true);
+
+    wp_enqueue_script('jquery-ui.js', plugins_url('jquery-ui-1.12.1/jquery-ui.js', __FILE__),'1.1', true);
+
+    wp_enqueue_script('jquery.steps.js', plugins_url('jquery.steps-1.1.0/jquery.steps.js', __FILE__),'1.1', true);
+
+    wp_enqueue_style( 'jquery-ui.min', plugins_url('jquery-ui-1.12.1/jquery-ui.min.css', __FILE__),true,'1.1');
+
+    wp_enqueue_style( 'jquery.steps', plugins_url('css/jquery.steps.css', __FILE__),true,'1.1');
+
+    wp_enqueue_style( 'main', plugins_url('css/main.css', __FILE__),true,'1.4');
+
+    wp_enqueue_script('functions', plugins_url('functions.js', __FILE__),'1.5', true);
+
+    $script_data = array(
+        'admin_ajax' => admin_url( 'admin-ajax.php' )
+    );
+
+    wp_localize_script(
+        'functions',
+        'wpa_data',
+        $script_data
+    );
+
+
+}
+
+
+//add_action( 'wp_ajax_my_tag_count', 'my_ajax_handler' );
+//$title_nonce = wp_create_nonce( 'title_example' );
+
+function my_ajax_handler() {
+   /* $title_nonce = wp_create_nonce( 'title_example' );
+    check_ajax_referer( 'title_example' );*/
+    //sendMail();
+    createPDF();
+
+    $data = $_POST['formdata'];
+
+    echo $data['hubspotutk'];
+
+    postData($data);
+
+
+    wp_die(); // All ajax handlers die when finished
+}
+
+
+function foobar_func( $atts ){
+    $wizard = file_get_contents('http://localhost:8888/resourcify.de/wp-content/plugins/res-roi/wizard.html');
+    return $wizard;
+}
+
+add_shortcode( 'foobar', 'foobar_func' );
+
 
 function plugin_activate() {
     roiCreateDatabase();
     postData();
+
 }
 
 function plugin_unistall(){
@@ -139,7 +203,7 @@ function roiCreateDatabase(){
 
 }
 
-function postData(){
+function postData($json){
 
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
@@ -148,70 +212,70 @@ function postData(){
     $wpdb->insert(
         $table_name,
         array(
-            'time' => 'value1',
-            'hubspotutk' => 1,
-            'hssc' => 1,
-            'UserIP' => 1,
-            'stage' => 1,
-            'Orders_Week' => 1,
-            'Cost_Depsoition' => 1,
-            'ErpSystem' => 1,
-            'Percentage_Mail' => 1,
-            'Percentage_Phone' => 1,
-            'Percentage_Fax' => 1,
-            'Percentage_Portal' => 1,
-            'Workload_Mail_Open' => 1,
-            'Workload_Mail_Read' => 1,
-            'Workload_Mail_Process' => 1,
-            'Workload_Mail_Confirm' => 1,
-            'Workload_Mail_Other' => 1,
-            'Workload_Mail_Other_Value' => 1,
-            'Workload_Phone_Accept' => 1,
-            'Workload_Phone_Process' => 1,
-            'Workload_Phone_Confirm' => 1,
-            'Workload_Phone_Other' => 1,
-            'Workload_Phone_Other_Value' => 1,
-            'Workload_Fax_Recieve' => 1,
-            'Workload_Fax_Read' => 1,
-            'Workload_Fax_Process' => 1,
-            'Workload_Fax_Confirm' => 1,
-            'Workload_Fax_Other' => 1,
-            'Workload_Fax_Other_Value' => 1,
-            'Workload_Portal_Open' => 1,
-            'Workload_Portal_Process' => 1,
-            'Workload_Portal_Other' => 1,
-            'Workload_Portal_Other_Value' => 1,
-            'FalseRide_Amount' => 1,
-            'FalseRide_Cost' => 1,
-            'FalseRide_Time' => 1,
-            'FalseRide_Reason_WrongContainer' => 1,
-            'FalseRide_Reason_ContainerNotAccesible' => 1,
-            'FalseRide_Reason_Other' => 1,
-            'FalseRide_Reason_Other_Value' => 1,
-            'CustomerSatisfaction_WaitLoop' => 1,
-            'CustomerSatisfaction_WaitLoop_NoData' => 1,
-            'CustomerSatisfaction_EasyOrder' => 1,
-            'CustomerSatisfaction_CustomerAmount' => 1,
-            'CustomerSatisfaction_GewAbfV_Status' => 1,
-            'CustomerSatisfaction_GewAbfV_Time' => 1,
-            'ItCosts_App_Status' => 1,
-            'ItCosts_App_FunkionAnpassenPressed' => 1,
-            'ItCosts_App_Pickup' => 1,
-            'ItCosts_App_Multilocation' => 1,
-            'ItCosts_App_Containershop' => 1,
-            'ItCosts_App_Pushnotification' => 1,
-            'ItCosts_App_OrderStatus' => 1,
-            'ItCosts_App_API' => 1,
-            'ItCosts_App_Webapp' => 1,
-            'ItCosts_App_IOS' => 1,
-            'ItCosts_App_Android' => 1,
-            'ItCosts_App_Other' => 1,
-            'ItCosts_App_Other_Value' => 1,
-            'ItCosts_Portal_Status' => 1,
-            'ItCosts_Portal_Cost' => 1,
-            'Customer_Mail' => 1,
-            'Customer_Name' => 1,
-            'ItCosts_Portal_Cost' => 1
+            'time' => '1',
+            'hubspotutk' => $json['hubspotutk'],
+            'hssc' => $json['hssc'],
+             'UserIP' => '1',
+            'General_Step' => '1',
+            'Orders_Week' => $json['Orders_Week'],
+            'Cost_Depsoition' => $json['Cost_Depsoition'],
+           'ErpSystem' => $json['ErpSystem'],
+            'Percentage_Mail' => $json['Percentage_Mail'],
+            'Percentage_Phone' => $json['Percentage_Phone'],
+            'Percentage_Fax' => $json['Percentage_Fax'],
+            'Percentage_Portal' => $json['Percentage_Portal'],
+            'Workload_Mail_Open' => $json['Workload_Mail_Open'],
+            'Workload_Mail_Read' => $json['Workload_Mail_Read'],
+            'Workload_Mail_Process' => $json['Workload_Mail_Process'],
+            'Workload_Mail_Confirm' => $json['Workload_Mail_Confirm'],
+            'Workload_Mail_Other' => $json['Workload_Mail_Other'],
+            'Workload_Mail_Other_Value' => $json['Workload_Mail_Other_Value'],
+            'Workload_Phone_Accept' => $json['Workload_Phone_Accept'],
+            'Workload_Phone_Process' => $json['Workload_Phone_Process'],
+            'Workload_Phone_Confirm' => $json['Workload_Phone_Confirm'],
+            'Workload_Phone_Other' => $json['Workload_Phone_Other'],
+            'Workload_Phone_Other_Value' => $json['Workload_Phone_Other_Value'],
+            'Workload_Fax_Recieve' => $json['Workload_Fax_Recieve'],
+            'Workload_Fax_Read' => $json['Workload_Fax_Read'],
+            'Workload_Fax_Process' => $json['Workload_Fax_Process'],
+            'Workload_Fax_Confirm' => $json['Workload_Fax_Confirm'],
+            'Workload_Fax_Other' => $json['Workload_Fax_Other'],
+            'Workload_Fax_Other_Value' => $json['Workload_Fax_Other_Value'],
+            'Workload_Portal_Open' => $json['Workload_Portal_Open'],
+            'Workload_Portal_Process' => $json['Workload_Portal_Process'],
+            'Workload_Portal_Other' => $json['Workload_Portal_Other'],
+            'Workload_Portal_Other_Value' => $json['Workload_Portal_Other_Value'],
+            'FalseRide_Amount' => $json['FalseRide_Amount'],
+            'FalseRide_Cost' => $json['FalseRide_Cost'],
+            'FalseRide_Time' => $json['FalseRide_Time'],
+            'FalseRide_Reason_WrongContainer' => $json['FalseRide_Reason_WrongContainer'],
+            'FalseRide_Reason_ContainerNotAccesible' => $json['FalseRide_Reason_ContainerNotAccesible'],
+            'FalseRide_Reason_Other' => $json['FalseRide_Reason_Other'],
+            'FalseRide_Reason_Other_Value' => $json['FalseRide_Reason_Other_Value'],
+            'CustomerSatisfaction_WaitLoop' => $json['CustomerSatisfaction_WaitLoop'],
+            'CustomerSatisfaction_WaitLoop_NoData' => $json['CustomerSatisfaction_WaitLoop_NoData'],
+            'CustomerSatisfaction_EasyOrder' => $json['CustomerSatisfaction_EasyOrder'],
+            'CustomerSatisfaction_CustomerAmount' => $json['CustomerSatisfaction_CustomerAmount'],
+            'CustomerSatisfaction_GewAbfV_Status' => $json['CustomerSatisfaction_GewAbfV_Status'],
+            'CustomerSatisfaction_GewAbfV_Time' => $json['CustomerSatisfaction_GewAbfV_Time'],
+            'ItCosts_App_Status' => $json['ItCosts_App_Status'],
+            'ItCosts_App_FunkionAnpassenPressed' => $json['ItCosts_App_FunkionAnpassenPressed'],
+            'ItCosts_App_Pickup' => $json['ItCosts_App_Pickup'],
+            'ItCosts_App_Multilocation' => $json['ItCosts_App_Multilocation'],
+            'ItCosts_App_Containershop' => $json['ItCosts_App_Containershop'],
+            'ItCosts_App_Pushnotification' => $json['ItCosts_App_Pushnotification'],
+            'ItCosts_App_OrderStatus' => $json['ItCosts_App_OrderStatus'],
+            'ItCosts_App_API' => $json['ItCosts_App_API'],
+            'ItCosts_App_Webapp' => $json['ItCosts_App_Webapp'],
+            'ItCosts_App_IOS' => $json['ItCosts_App_IOS'],
+            'ItCosts_App_Android' => $json['ItCosts_App_Android'],
+            'ItCosts_App_Other' => $json['ItCosts_App_Other'],
+            'ItCosts_App_Other_Value' => $json['ItCosts_App_Other_Value'],
+            'ItCosts_Portal_Status' => $json['ItCosts_Portal_Status'],
+            'ItCosts_Portal_Cost' => $json['ItCosts_Portal_Cost'],
+            'Customer_Mail' => $json['Customer_Mail'],
+            'Customer_Name' => $json['Customer_Name'],
+            'ItCosts_Portal_Cost' => $json['ItCosts_Portal_Cost']
         ),
         array(
             '%s',   //time
@@ -291,3 +355,34 @@ function roiDeleteDatabase(){
     $wpdb->query($sql);
 }
 
+function sendMail(){
+    $msg = "Order now at myescobar.de";
+
+// use wordwrap() if lines are longer than 70 characters
+    $msg = wordwrap($msg,70);
+
+// send email
+    mail("martin.barron@resourcify.de","Order Now",$msg,'from: pablo-escobar@magicmushrooms.de');
+}
+
+
+
+function createPDF(){
+
+    $url = 'https://pdf.mein-recycling.de/api/pdf/10';
+    $ch = curl_init($url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+    curl_close($ch);
+
+
+}
+
+
+
+
+//Library for converting html to pdf

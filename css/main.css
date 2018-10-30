@@ -26,16 +26,6 @@ ROI Calculator Style Sheet
 +++++++++++++++++++++++++++
 */
 
-body{
-    font-family:sans-serif;
-    
-}
-
-p{
-    font-size: 14px;
-    line-height: 20px;
-}
-
 /*
 +++++++++++++++++++++++++++
 1. CSS modifying the default Wizard
@@ -45,6 +35,14 @@ p{
 /*
 ++++  Sidebar ++++
 */
+
+.wizard, .tabcontrol {
+    height: 100%;
+}
+
+.wizard p{
+    line-height: 20px;
+}
 
 /*making sidebar full height*/
 .wizard.vertical > .steps {
@@ -73,22 +71,34 @@ res-roi-section-steps-container .number{
 /*adding new numbering */
 .res-roi-steps .res-number{
     float: left;
-    font-size: 12px;
-    height:15px;
-    width: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    height:20px;
+    width: 20px;
     border-radius: 10px;
     margin-right: 5px;
-    border: 1px solid #969696;
-    color: #969696;
+    color: #2E6677;
+    background-color: #fff;
     text-align: center;
+    line-height: 16px;
+    margin-top: -14px;
 }
 
+.res-roi-disable-steps-action{
+        height: 301px;
+    position: fixed;
+    width: 378px;
+}
 
 
 
 /*aligning heading and number*/
 .res-roi-steps-text{
     margin-top: -16px;
+}
+
+.res-roi-steps-text p{
+   opacity: 0.46;
 }
 
 /*TODO check if needed*/
@@ -107,7 +117,7 @@ res-roi-section-steps-container .number{
 /*Steps sub headings*/
 .res-roi-steps h3{
     font-size: 15px;
-    margin-bottom: 5px;
+ padding-bottom: 0px;
 }
 
 
@@ -128,21 +138,23 @@ res-roi-section-steps-container .number{
 
 /*Adjusting height of input containers if active*/
 .wizard.vertical > .steps > ul > .current {
-    height: 110px;
+    height: 148px;
+    padding-top: 10px;
 }
 
 /*Adjusting height of input containers if inactive*/
 .wizard.vertical > .steps > ul > li {
     height: 30px;
+    padding-top: 10px;
 }
 
 .wizard.vertical > .steps > ul > .done .res-roi-steps .res-number{
-    color: #fff;
+    color: #2E6677;
     border-color: #fff;
 }
 
 .wizard.vertical > .steps > ul > .current .res-roi-steps .res-number{
-    color: #fff;   
+    color: #2E6677;   
     border-color: #fff;
 
 }
@@ -176,23 +188,32 @@ res-roi-section-steps-container .number{
 }
 
 /*limiting width of the content for all sections*/
+
 #res-roi-wizard-p-0{
-    max-width: 450px;
     
 }
 
 #res-roi-wizard-p-1{
-    max-width: 450px;
+    max-width: 656px;
     
 }
 
 #res-roi-wizard-p-2{
-    max-width: 450px;
+    max-width: 656px;
     
 }
 
 #res-roi-wizard-p-3{
-    max-width: 450px;
+    max-width: 656px;
+    
+}
+
+#res-roi-wizard-p-4{
+    max-width: 656px;
+    
+}
+
+#res-roi-wizard-p-5{
     
 }
 
@@ -211,7 +232,7 @@ h2{
 /*Limiting the dimensions of the wizard to not be fullscreen*/
 #res-roi-wizard-container{
     height: 750px;
-    width: 1300px;
+    width: 1200px;
     margin: auto;
     padding: 20px;
     box-shadow: 5px 5px 40px lightgrey;
@@ -236,6 +257,7 @@ h2{
     color: #797979;
     font-size: 15px;
     align-items: center;
+    line-height: 20px;
 }
 
 /*Info Tooltip*/
@@ -283,6 +305,13 @@ h2{
     margin-top: -17px;
 }
 
+.res-roi-steps-text h3 {
+    color: white;
+}
+
+.wizard > .content > .body label {
+ margin-bottom: 0px;   
+}
 
 /*
 +++++++++++++++++++++++++++
@@ -296,7 +325,7 @@ h2{
     height: 30px;
     width: 80px;
     text-align: center;
-    font-size: 25px;
+    font-size: 16px;
     line-height: 30px;
     bottom: 10px;
     position: absolute;
@@ -308,11 +337,22 @@ h2{
     cursor: pointer;
 }
 
+/*previous button*/
+#res-roi-button-start{
+  background-color: #579ACB;
+    color: #fff;
+    right: 20px;
+    bottom: 20px;
+
+}
+
 /*next button*/
 #res-roi-button-next{
     background-color: #579ACB;
     color: #fff;
     right: 20px;
+        visibility: hidden;
+    
 }
 
 /*previous button*/
@@ -320,6 +360,8 @@ h2{
     background-color: grey;
     color: #fff;
     right: 120px;
+         visibility: hidden;
+
 }
 
 /*done button*/
@@ -331,28 +373,30 @@ h2{
 
 /*send evalutation button*/
 #res-roi-send-evalution-button{
-    width: 200px;
+           width: 200px;
     background-color: #579ACB;
     color: #fff;
-    bottom: -7px;
+    bottom: 100px;
+    right: 31px;
 }
 
 #res-roi-app-adjust-button{
     margin-top: 20px;
-    background-color: #2E6677;
-    color: #fff;
+    background-color: #fff;
+    border: 1px solid #579ACB;
+    color: #579ACB;
     position: relative;
     font-size: 14px;
     height: 25px;
     z-index: 0 !important;
     line-height: 25px;
-    width: 150;
+    width: 159px;
 }
 /*++    Number Input    ++*/
 
 /*container of number input containig label, input, infotooltip ... */
 .res-roi-input-container-number{
-    margin-top: 14px;
+    margin-top: 4px;
     display: flex;
     align-items: center;
 }
@@ -361,7 +405,7 @@ h2{
 .res-roi-section-input-number{
     height: 25px;
     width: 80px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 10px;
     align-items: center;
     text-align: center;
@@ -376,14 +420,14 @@ h2{
 /* min next to values with unit*/
 .res-roi-section-label-unit{
     color: #797979;
-    width: 60px;
+    width: 40px;
     text-align: center;
 }
 
 /*adjusting textbox width so the unit fits next to it*/
 .res-roi-section-input-number-unit{
      margin: 0;
-     width: 50px;
+     width: 66px;
  }
 
 
@@ -391,8 +435,8 @@ h2{
 /*textbox shoing the sum of the textboxes above*/
 .res-roi-section-input-number-total{
     height: 25px;
-    width: 80px;
-    margin-right: 10px;
+    width: 67px;
+    margin-right: 20px;
     margin-left: 10px;
     align-items: center;
     text-align: center;
@@ -401,7 +445,9 @@ h2{
     background-color: #fff;
     text-align: center;
     line-height: 25px;
-    border: 2px  solid #EBE9ED;    
+    border: 1px solid  #969696 ;    
+    font-weight: 700;  
+
 }
 
 /*++    Text Input    ++*/
@@ -448,8 +494,9 @@ h2{
 /*Container for the slider itself, only slider shoud be in here*/
 .res-roi-slider-element-container{
     float: left;
-    width: 350px;
+    width: 487px;
     margin-top: 0px;
+    margin-right: 19px;
     
 }
 
@@ -505,7 +552,7 @@ h2{
 /* Create a custom checkbox */
 .res-roi-section-input-checkbox-checkmark {
     position: absolute;
-    top: 7px;
+    top: 3px;
     height: 18px;
     width: 18px;
     background-color: #fff;
@@ -535,13 +582,16 @@ h2{
 }
 
 /* Style the checkmark/indicator */
-.res-roi-section-input-checkbox-container .res-roi-section-input-checkbox-checkmark:after {
-    left: 2px;
-    top: 2px;
-    width: 13px;
-    height: 13px;
-    border-radius: 10px;
-    background-color: #2E6677;
+.res-roi-section-input-checkbox-container .res-roi-section-input-checkbox-checkmark:after {    
+    left: 4px;
+    top: -1px;
+    width: 5px;
+    height: 11px;
+    border: 1px solid #2E6677;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .res-checkobx-section-container .res-roi-section-input-label-secondary{
@@ -590,7 +640,7 @@ h2{
     position: relative;
     opacity: 1 !important;
     background-color: #ECECEC;
-    width: 35%;
+    width: 50%;
     height: 100%;
     padding: 30px;
 }
@@ -601,18 +651,25 @@ h2{
 +++++++++++++++++++++++++++
 */
 
-.res-roi-evaluation-preview-container{
+.res-roi-evaluation-preview-container-text-image{
     display: flex;
+    height: 150px;
     
 }
 
+.res-roi-evaluation-preview-container{
+background-color: #fff;    
+    box-shadow: 5px 5px 40px lightgrey;
+}
+
 .res-roi-evaluation-form-container{
-        box-shadow: -1px -12px 10px 0px #969696;
-        margin-top: 30px;
-        width: 100% !important;
+        box-shadow: -1px -12px 40px 0px #969696;
+        margin-top: 53px;
+        width: 110% !important;
         position: absolute;
         margin-left: -2.5%;
         padding-left: 2.5%;
+    height: 49%;
 }
 
 .res-roi-evaluation-form-container-content{
@@ -621,7 +678,17 @@ h2{
 }
 
 .res-roi-evaluation-form-container-content-input{
-    width: 600px;
+     background-color: #fff;
+    margin-top: 20px;
+    height: 296px;
+    width: 798px;
+    padding: 20px;
+    margin-left: -19px;
+    box-shadow: 5px 5px 40px lightgrey;
+
+}
+
+
 }
 
 .res-roi-evaluation-diagramm{
@@ -631,9 +698,36 @@ h2{
 }
 
 .res-roi-evaluation-form-container-content-action-image{
+/*
     background-color: grey;
     height: 187px;
     width: 134px;
-    margin-top: 88px;
+    margin-top: 56px;
     margin-left: 32px;
+*/
 }
+
+.res-roi-evaluation-diagramm img {
+    max-width: none;
+    height: 156px;
+}
+
+.res-roi-evaluation-preview-container{
+        background-color: #fff;
+    padding: 20px;
+    height: 250px;
+}
+
+/*
++++++++++++++++++++++++++++
+6.  Anleitung 
++++++++++++++++++++++++++++
+*/
+
+.res-roi-introduction-container{
+        width: 106%;
+    height: 106%;
+    background-color: #fff;
+    padding: 20%;
+}
+
