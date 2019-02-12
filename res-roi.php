@@ -44,8 +44,14 @@ register_deactivation_hook( 'res-roi/res-roi.php', 'plugin_unistall' );
 register_uninstall_hook('res-roi/res-roi.php' , 'plugin_unistall');
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
-add_action( 'wp_ajax_some_action', 'my_ajax_handler' );
-add_action( 'wp_ajax_nopriv_some_action', 'my_ajax_handler' );
+//add_action( 'wp_ajax_save_data', 'my_ajax_handler' );
+//add_action( 'wp_ajax_nopriv_save_data', 'my_ajax_handler' );
+
+add_action( 'wp_ajax_save_data', 'my_ajax_handler' );
+add_action( 'wp_ajax_nopriv_save_data', 'my_ajax_handler' );
+
+add_action( 'wp_ajax_send_mail', 'my_ajax_handler_mail' );
+add_action( 'wp_ajax_nopriv_send_mail', 'my_ajax_handler_mail' );
 
 
 
@@ -87,12 +93,8 @@ function wpb_adding_scripts() {
 function my_ajax_handler() {
    /* $title_nonce = wp_create_nonce( 'title_example' );
     check_ajax_referer( 'title_example' );*/
-    //sendMail();
-    createPDF();
 
     $data = $_POST['formdata'];
-
-    echo $data['hubspotutk'];
 
     postData($data);
 
@@ -101,8 +103,20 @@ function my_ajax_handler() {
 }
 
 
+function my_ajax_handler_mail() {
+    /* $title_nonce = wp_create_nonce( 'title_example' );
+     check_ajax_referer( 'title_example' );*/
+
+    $data = $_POST['formdata'];
+
+    sendMail($data);
+
+
+    wp_die(); // All ajax handlers die when finished
+}
+
 function foobar_func( $atts ){
-    $wizard = file_get_contents('http://localhost:8888/resourcify.de/wp-content/plugins/res-roi/wizard.html');
+    $wizard = file_get_contents(plugins_url('wizard.html', __FILE__));
     return $wizard;
 }
 
@@ -117,7 +131,6 @@ function plugin_activate() {
 
 function plugin_unistall(){
     roiDeleteDatabase();
-
 }
 
 
@@ -275,6 +288,7 @@ function postData($json){
             'ItCosts_Portal_Cost' => $json['ItCosts_Portal_Cost'],
             'Customer_Mail' => $json['Customer_Mail'],
             'Customer_Name' => $json['Customer_Name'],
+            'Customer_Phone' => $json['Customer_Phone'],
             'ItCosts_Portal_Cost' => $json['ItCosts_Portal_Cost']
         ),
         array(
@@ -348,41 +362,58 @@ function postData($json){
 
 }
 
-function roiDeleteDatabase(){
+function roiDeleteDatabase($json){
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
     $sql = "DROP TABLE IF EXISTS $table_name";
     $wpdb->query($sql);
 }
 
-function sendMail(){
-    $msg = "Order now at myescobar.de";
+function sendMail($json){
 
-// use wordwrap() if lines are longer than 70 characters
-    $msg = wordwrap($msg,70);
+    $to = $json['Customer_Mail'];
+    $subject = "Ihr Vorteil durch Resourcify";
+    $txt = "Wir sind dabei Ihr ergebniss auszuwerten und werden uns demnächt mit Ihnen in Verbindung setzen. <br><br> Mit freundlichen Grüßen <br> Ihr Resourcify Team";
+    $headers = "From: info@resourcify.de" . "\r\n".'Content-type: text/html; charset=utf8' . "\r\n";
+    $message = $txt;
 
-// send email
-    mail("martin.barron@resourcify.de","Order Now",$msg,'from: pablo-escobar@magicmushrooms.de');
+    mail($to,$subject,$txt,$headers);
+
+// Send the email
+    if(mail($to, $subject, $message, $headers)) {
+        echo "The email was sent.";
+    }
+    else {
+
+        echo "There was an error sending the mail.";
+
+    }
 }
 
 
-
+/*
 function createPDF(){
 
     $url = 'https://pdf.mein-recycling.de/api/pdf/10';
     $ch = curl_init($url);
 
     curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, '{"CompanyName": "Pendula"}');
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',)
+    );
 
     $response = curl_exec($ch);
     curl_close($ch);
 
+    echo  $response;
+    return $response;
+
 
 }
 
-
+*/
 
 
 //Library for converting html to pdf

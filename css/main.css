@@ -289,10 +289,12 @@ h2{
     font-size: 14px;
     width: 200px; 
     opacity: 0.8;
+    left: -37px;
 }
 
 .res-roi-specification-menu .res-roi-steps-info-tooltip{
         right: 0px;
+    left: -211px;
 }
     
 
@@ -343,6 +345,7 @@ h2{
     color: #fff;
     right: 20px;
     bottom: 20px;
+    width: 130px;
 
 }
 
@@ -376,7 +379,7 @@ h2{
            width: 200px;
     background-color: #579ACB;
     color: #fff;
-    bottom: 100px;
+    bottom: -9px;
     right: 31px;
 }
 
@@ -450,6 +453,12 @@ h2{
 
 }
 
+.res-roi-section-input-error{
+    color: red;
+    display: none;
+    line-height: 18px;
+}
+
 /*++    Text Input    ++*/
 
 /*Styling for the textbox*/
@@ -460,7 +469,7 @@ h2{
     margin-top: 15px;
     text-align: left;
     font-size: 15px;
-    color: #969696;
+    color: black;
     padding-left: 10px;
     background-color: #fff;
     line-height: 25px;
@@ -680,7 +689,7 @@ background-color: #fff;
 .res-roi-evaluation-form-container-content-input{
      background-color: #fff;
     margin-top: 20px;
-    height: 296px;
+    height: 398px;
     width: 798px;
     padding: 20px;
     margin-left: -19px;
@@ -688,8 +697,6 @@ background-color: #fff;
 
 }
 
-
-}
 
 .res-roi-evaluation-diagramm{
     margin-right: 50px;
@@ -715,7 +722,7 @@ background-color: #fff;
 .res-roi-evaluation-preview-container{
         background-color: #fff;
     padding: 20px;
-    height: 250px;
+    height: 257px;
 }
 
 /*

@@ -90,7 +90,7 @@ function settingEventListeners() {
                 sendMail();
                 makePost();
                 $("#res-roi-send-evalution-button-error-mail").css("display", "none");
-                $(".res-roi-action-input").html("<h1>Ihre Mail wurde versendet</h1>");
+                $(".res-roi-action-input").html('<h3 Style="color: black">Wir haben Ihre Ergebnisse erhalten und werden Ihnen demnächst einen personalisierten Bericht per Mail zukommen lassen.</h3><br><br><h4><a href="https://www.resourcify.de/mehr-erfahren/digital-ist-besser/">Lesen Sie hier wie Augustin Entsorgung durch unsere  Lösungen profitieren konnte</a>');
                 $("#res-roi-send-evalution-button").css("display", "none");
             }
             else{
@@ -518,7 +518,7 @@ function GoPrevious(HideElementOne, HideElementTwo, ShowElementOne) {
 
 function updateEvaluationText() {
     let results = calculationResults() ;
-    let text = "Fertig! Digitales Auftragsmanagement hat für Sie folgende Vorteile: Sie können Verwaltungskosten in Höhe von "+ Math.round(results.AdminCostSaved)+ " EUR einsparen sowie  "+ results.FalseRidesCostSaved*4 +" EUR durch weniger Fehlfahrten im Monat ";
+    let text = "Fertig! Digitales Auftragsmanagement hat für Sie folgende Vorteile: Sie können Verwaltungskosten in Höhe von "+ Math.round(results.AdminCostSaved)+ " EUR  im Monat einsparen sowie   "+ results.FalseRidesCostSaved*4 +" EUR durch weniger Fehlfahrten. ";
     return text;
 }
 
@@ -736,6 +736,7 @@ function validateEmail() {
 
 function sendMail() {
     let formData = collectingData();
+    let results = calculationResults();
 
     $.ajax({
         type: "POST",
@@ -744,6 +745,7 @@ function sendMail() {
         data: {
             "action": "send_mail",
             "formdata": formData,
+            "results": results,
         },
         success: function () {
         }

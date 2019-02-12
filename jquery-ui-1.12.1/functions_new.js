@@ -3,7 +3,7 @@ var developement = false;
 function setup() {
     if (developement) {
         setFalseRide_Amount("#FalseRide_Amount");
-        timeSavingsAdmin();
+        currentTimeAdmin();
         costSavingFalseRides();
     }
     modifyWizard();
@@ -90,7 +90,7 @@ function settingEventListeners() {
                 sendMail();
                 makePost();
                 $("#res-roi-send-evalution-button-error-mail").css("display", "none");
-                $(".res-roi-action-input").html("<h1>Ihre Mail wurde versendet</h1>");
+                $(".res-roi-action-input").html('<h3 Style="color: black">Wir haben Ihre Ergebnisse erhalten und werden Ihnen demnächst einen personalisierten Bericht per Mail zukommen lassen.</h3><br><br><h4><a href="https://www.resourcify.de/mehr-erfahren/digital-ist-besser/">Lesen Sie hier wie Augustin Entsorgung durch unsere  Lösungen profitieren konnte</a>');
                 $("#res-roi-send-evalution-button").css("display", "none");
             }
             else{
@@ -518,7 +518,7 @@ function GoPrevious(HideElementOne, HideElementTwo, ShowElementOne) {
 
 function updateEvaluationText() {
     let results = calculationResults() ;
-    let text = "Fertig! Digitales Auftragsmanagement hat für Sie folgende Vorteile: Sie können Verwaltungskosten in Höhe von "+ Math.round(results.AdminCostSaved)+ " EUR einsparen sowie  "+ results.FalseRidesCostSaved*4 +" EUR durch weniger Fehlfahrten im Monat ";
+    let text = "Fertig! Digitales Auftragsmanagement hat für Sie folgende Vorteile: Sie können Verwaltungskosten in Höhe von "+ Math.round(results.AdminCostSaved)+ " EUR  im Monat einsparen sowie   "+ results.FalseRidesCostSaved*4 +" EUR durch weniger Fehlfahrten. ";
     return text;
 }
 
@@ -582,6 +582,7 @@ function resRoiConstants() {
         "reducedFalseRideWrongContainer": 0.5,
         "reducedFalseRideWrongContainerContainerNotAccesible": 0.5,
         "percentageFalseTrips": 0.02,
+        "timeSaved": 0.8, //how many percent can be avoided in future
         "ItCosts_App": {
             "ItCosts_App_API": 10000,
             "ItCosts_App_Android": 10000,
@@ -601,19 +602,40 @@ function resRoiConstants() {
 }
 
 function calculationResults() {
+    let constants = resRoiConstants();
+    let formData = collectingData();
     let results = {};
 
-    results["AdminTimeSaved"] = secondsToHoursAndMinutes(timeSavingsAdmin());
-    results["AdminCostSaved"] = secondsToMoney(timeSavingsAdmin());
-    results["FalseRidesCostSaved"] = costSavingFalseRides();
-    results["timeSavedGewAbf"] = timeSavingsCustomerSatisfactionGewAbf();
+    //Cost saved per Month
+    results["Admin_Current_Time_Month"] = secondsToHoursAndMinutes(currentTimeAdmin()*4);
+    results["Admin_Current_Cost_Month"] =  secondsToMoney(currentTimeAdmin()*4);
+    results["Admin_Saved_Time_Month"] = secondsToHoursAndMinutes(currentTimeAdmin()*constants.timeSaved*4);
+    results["Admin_Saved_Cost_Month"] = secondsToMoney(currentTimeAdmin()*constants.timeSaved*4);
+    results["FalseRides_Saved_Cost_Month"] = costSavingFalseRides()*4;
+    results["FalseRides_Saved_Amount_Month"] = savedFalseRides()*4;
+    results["FalseRides_Saved_Cost_Month"] = savedFalseRidesCost()*4;
+    //Cost saved per Year
+    results["GewAbf_Saved_Time_Year"] = timeSavingsCustomerSatisfactionGewAbf()/60;
+    results["FalseRides_Saved_Amount_Year"] = results.Admin_Saved_Time_Month * 12;
+    results["Admin_Saved_Cost_Year"] = results.Admin_Saved_Cost_Month * 12;
+    results["FalseRides_Saved_Amount_Year"] = results.FalseRides_Saved_Amount_Month * 12;
+
+
+    //For Diagram
+    results["Time_Mail_Week"] = (formData.Orders_Week * (formData.Percentage_Mail / 100)) * sumOfValues("#specification-menu-email", ".res-roi-section-input-number");
+    results["Time_Phone_Week"] = (formData.Orders_Week * (formData.Percentage_Phone / 100)) * sumOfValues("#specification-menu-phone", ".res-roi-section-input-number");
+    results["Time_Fax_Week"] = (formData.Orders_Week * (formData.Percentage_Fax / 100)) * sumOfValues("#specification-menu-fax", ".res-roi-section-input-number");
+    results["Time_Portal_Week"] = (formData.Orders_Week * (formData.Percentage_Portal / 100)) * sumOfValues("#specification-menu-portal", ".res-roi-section-input-number");
+
+
     results["DevelopementCostSaved"] = developementCostSavingItCost();
-    results["FalseRidesSaved"] = savedFalseRides();
-    results["FalseRidesSavedCost"] = savedFalseRidesCost();
+
+
+
     return results;
 }
 
-function timeSavingsAdmin() {
+function currentTimeAdmin() {
     let formData = collectingData();
     timeMail = (formData.Orders_Week * (formData.Percentage_Mail / 100)) * sumOfValues("#specification-menu-email", ".res-roi-section-input-number");
     timePhone = (formData.Orders_Week * (formData.Percentage_Phone / 100)) * sumOfValues("#specification-menu-phone", ".res-roi-section-input-number");
@@ -631,7 +653,7 @@ function hoursToMoney(hours) {
 
 function secondsToMoney(seconds) {
     let formData =  collectingData();
-    return formData.Cost_Depsoition/11/40 * seconds/60/60 ;
+    return formData.Cost_Depsoition/11/4/40 * seconds/60/60 ;
 }
 
 function costSavingFalseRides() {
@@ -736,6 +758,7 @@ function validateEmail() {
 
 function sendMail() {
     let formData = collectingData();
+    let results = calculationResults();
 
     $.ajax({
         type: "POST",
@@ -744,6 +767,7 @@ function sendMail() {
         data: {
             "action": "send_mail",
             "formdata": formData,
+            "results": results,
         },
         success: function () {
         }

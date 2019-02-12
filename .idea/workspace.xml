@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72ca3e4a-9283-46a9-bca4-71e892ba8338" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/moritzhoppner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jquery-ui-1.12.1/functions_backup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jquery-ui-1.12.1/functions_new.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/functions.js" afterDir="false" />
@@ -70,117 +72,99 @@
     <session id="-1446134947">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="4" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.closed" value="22" />
+          <entry key="project.open.time.0" value="10" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="2" />
-          <entry key="html" value="6" />
-          <entry key="js" value="12" />
-          <entry key="php" value="7" />
+          <entry key="css" value="9" />
+          <entry key="html" value="9" />
+          <entry key="js" value="17" />
+          <entry key="php" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="6" />
-          <entry key="JavaScript" value="12" />
-          <entry key="PHP" value="6" />
+          <entry key="CSS" value="9" />
+          <entry key="HTML" value="9" />
+          <entry key="JavaScript" value="17" />
+          <entry key="PHP" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="2980" />
-          <entry key="js" value="5291" />
-          <entry key="php" value="2650" />
+          <entry key="css" value="84" />
+          <entry key="html" value="4970" />
+          <entry key="js" value="6513" />
+          <entry key="php" value="3192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2980" />
-          <entry key="JavaScript" value="5291" />
-          <entry key="PHP" value="2638" />
+          <entry key="CSS" value="85" />
+          <entry key="HTML" value="4970" />
+          <entry key="JavaScript" value="6512" />
+          <entry key="PHP" value="3180" />
           <entry key="SQL" value="10" />
           <entry key="Scratch" value="2" />
         </counts>
       </usages-collector>
     </session>
+    <session id="543035877">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.193" value="1" />
+          <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.opened" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="es6" value="1" />
+          <entry key="html" value="1" />
+          <entry key="js" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="2" />
+          <entry key="Scratch" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="20" />
+          <entry key="html" value="38" />
+          <entry key="js" value="469" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="20" />
+          <entry key="HTML" value="38" />
+          <entry key="JavaScript" value="469" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="966">
-              <caret line="302" lean-forward="true" selection-start-line="302" selection-end-line="302" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/normalize.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/res-roi.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="371" column="52" selection-start-line="371" selection-start-column="52" selection-end-line="371" selection-end-column="52" />
-              <folding>
-                <element signature="e#376#1100#0#PHP" />
-                <element signature="e#1040#1170#0#PHP" />
-                <element signature="e#1104#1297#0#PHP" />
-                <element signature="n#wpb_adding_scripts#0;n#!!top" />
-                <element signature="e#2514#2572#0#PHP" />
-                <element signature="e#2573#2645#0#PHP" />
-                <element signature="e#2817#2915#0#PHP" />
-                <element signature="n#foobar_func#0;n#!!top" />
-                <element signature="n#plugin_activate#0;n#!!top" />
-                <element signature="n#plugin_unistall#0;n#!!top" />
-                <element signature="n#roiCreateDatabase#0;n#!!top" />
-                <element signature="n#${$table_name}#0" />
-                <element signature="n#postData#0;n#!!top" />
-                <element signature="e#6777#14049#0#PHP" />
-                <element signature="e#6821#11256#0#PHP" />
-                <element signature="e#8314#11091#0#PHP" />
-                <element signature="n#roiDeleteDatabase#0;n#!!top" />
-                <element signature="e#0#35#1" />
-                <element signature="n#sendMail#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/examples/example1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="8" selection-start-line="25" selection-end-line="25" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/HTML_ToPDF.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#pre#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -191,36 +175,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>workload</find>
-      <find>fax_re</find>
-      <find>Workload_Phone_Other</find>
-      <find>orders</find>
-      <find>tab</find>
-      <find>total</find>
-      <find>percentagetotal</find>
-      <find>other</find>
-      <find>wir erfa</find>
-      <find>auswert</find>
-      <find>anleitung</find>
-      <find>resRoiconstants</find>
-      <find>GoNext</find>
-      <find>we are so</find>
-      <find>&gt;a&lt;</find>
-      <find>gonext</find>
-      <find>res-roi-button-</find>
-      <find>button</find>
-      <find>auswer</find>
-      <find>Wie viele Ihrer Kunden würdern gerne einfacher Bestellen können?</find>
-      <find>unden würdern ge</find>
-      <find>sendMail</find>
-      <find>slider</find>
-      <find>checkbox</find>
-      <find>console</find>
-      <find>GoPrevious</find>
-      <find>ItCosts_App_Status</find>
-      <find>[name</find>
-      <find>ItCosts_Portal_Status</find>
-      <find>[nam</find>
+      <find>res-roi-section-input-error-</find>
+      <find>.res-roi-evaluation-form-container-content-input</find>
+      <find>done</find>
+      <find>validateemail</find>
+      <find>res-roi-send-evalution-button-error</find>
+      <find>sendmail</find>
+      <find>collect</find>
+      <find>make</find>
+      <find>res-roi-section-input-tex</find>
+      <find>error</find>
+      <find>Customer_Mail</find>
+      <find>abholu</find>
+      <find>digitales</find>
+      <find>Customer_Phone</find>
+      <find>res-roi-steps-info-tooltip</find>
+      <find>customer-mail</find>
+      <find>mail</find>
+      <find>sendmai</find>
+      <find>customer_Mail</find>
+      <find>res-roi-button-start</find>
+      <find>medium</find>
+      <find>e-mail</find>
+      <find>fertig</find>
+      <find>schnellüber</find>
+      <find>#res-roi-send-evalution-button</find>
+      <find>wie viele bes</find>
+      <find>push no</find>
+      <find>calculatio</find>
+      <find>current</find>
+      <find>previous</find>
     </findStrings>
     <replaceStrings>
       <replace>let</replace>
@@ -243,6 +227,7 @@
       <replace>CustomerSatisfaction_CustomerAmount</replace>
       <replace>CustomerSatisfaction_GewAbfV_Status</replace>
       <replace>resRoiConstants</replace>
+      <replace>Sie brauchen länger als Sie denken</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -251,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/main.css" />
         <option value="$PROJECT_DIR$/css/getting slider to work.html" />
         <option value="$PROJECT_DIR$/database connection.php" />
         <option value="$PROJECT_DIR$/php/akismet.php" />
@@ -262,9 +246,17 @@
         <option value="$USER_HOME$/Downloads/HTML_ToPDF-3.5/HTML_ToPDF.php" />
         <option value="$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/examples/example1.php" />
         <option value="$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/HTML_ToPDF.php" />
-        <option value="$PROJECT_DIR$/wizard.html" />
+        <option value="$PROJECT_DIR$/../Guru Shop/GitHub/order_manager.php" />
+        <option value="/private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/res-roi.php" />
+        <option value="/private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/functions.js" />
         <option value="$PROJECT_DIR$/functions.js" />
         <option value="$PROJECT_DIR$/res-roi.php" />
+        <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/wizard.html" />
+        <option value="/private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/main.css" />
+        <option value="/private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/wizard.html" />
+        <option value="$PROJECT_DIR$/jquery-ui-1.12.1/functions_backup.js" />
+        <option value="$PROJECT_DIR$/jquery-ui-1.12.1/functions_new.js" />
       </list>
     </option>
   </component>
@@ -281,8 +273,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1956" />
-    <option name="height" value="960" />
+    <option name="width" value="1680" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -304,23 +296,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="res-roi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
+              <item name="res-roi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="res-roi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="Scratches" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
+              <item name="res-roi" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery-ui-1.12.1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -348,6 +340,11 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="res-roi.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/res-roi.php">
+      <method v="2" />
+    </configuration>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -371,11 +368,30 @@
       <workItem from="1540651380112" duration="6166000" />
       <workItem from="1540658318193" duration="1199000" />
       <workItem from="1540734266605" duration="6544000" />
+      <workItem from="1541161267071" duration="3435000" />
+      <workItem from="1541274935799" duration="612000" />
+      <workItem from="1541328371761" duration="3106000" />
+      <workItem from="1541355360673" duration="349000" />
+      <workItem from="1541358212827" duration="7179000" />
+      <workItem from="1541410680141" duration="679000" />
+      <workItem from="1541419079108" duration="1000" />
+      <workItem from="1541438411207" duration="3067000" />
+      <workItem from="1541489973780" duration="834000" />
+      <workItem from="1541495329925" duration="23000" />
+      <workItem from="1541495379325" duration="107000" />
+      <workItem from="1541501495045" duration="4000" />
+      <workItem from="1541583632617" duration="627000" />
+      <workItem from="1543220920333" duration="5752000" />
+      <workItem from="1543228970606" duration="2045000" />
+      <workItem from="1544526115107" duration="21000" />
+      <workItem from="1544612949259" duration="13000" />
+      <workItem from="1545251204588" duration="190000" />
+      <workItem from="1545251409474" duration="45000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125609000" />
+    <option name="totallyTimeSpent" value="161285000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,11 +403,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="970" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49430525" visible="true" weight="0.10756124" />
-      <window_info id="Structure" order="1" sideWeight="0.50569475" side_tool="true" visible="true" weight="0.10756124" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49103943" visible="true" weight="0.14345992" />
+      <window_info id="Structure" order="1" sideWeight="0.50896055" side_tool="true" weight="0.13805185" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -439,13 +454,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database connection.php" />
     <entry file="file://$PROJECT_DIR$/php/database connection.php" />
-    <entry file="file://$PROJECT_DIR$/../akismet/akismet.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="57" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../akismet/akismet.php" />
     <entry file="file://$PROJECT_DIR$/php/index.php" />
     <entry file="file://$PROJECT_DIR$/php/LICENSE.txt" />
     <entry file="file://$PROJECT_DIR$/php/readme.txt" />
@@ -453,13 +462,7 @@
     <entry file="file://$PROJECT_DIR$/php/class.akismet-cli.php" />
     <entry file="file://$PROJECT_DIR$/php/class.akismet-admin.php" />
     <entry file="file://$PROJECT_DIR$/php/akismet.php" />
-    <entry file="file://$PROJECT_DIR$/../../../../../bin/phpMyAdmin/config.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="86" column="44" selection-start-line="86" selection-start-column="44" selection-end-line="86" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../../bin/phpMyAdmin/config.inc.php" />
     <entry file="file://$PROJECT_DIR$/class.res-roi.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -489,13 +492,7 @@
     <entry file="file://$PROJECT_DIR$/css/normalize.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../themes/Divi/includes/builder/scripts/builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="90" column="4" selection-start-line="90" selection-start-column="4" selection-end-line="105" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/themes/Divi/includes/builder/scripts/builder.js" />
     <entry file="file://$PROJECT_DIR$/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -507,97 +504,182 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="1" lean-forward="true" selection-end-line="2044" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/HTML_ToPDF-3.5/HTML_ToPDF.php" />
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="966">
-          <caret line="302" lean-forward="true" selection-start-line="302" selection-end-line="302" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/HTML_ToPDF.php" />
+    <entry file="file://$PROJECT_DIR$/../Guru Shop/GitHub/order_manager.php" />
+    <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/examples/example1.php" />
+    <entry file="file:///private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/res-roi.php" />
+    <entry file="file:///private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/order_manager.php" />
+    <entry file="file://$USER_HOME$/Desktop/lewin.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/HTML_ToPDF.php">
+    <entry file="file:///private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/functions.js" />
+    <entry file="file://$PROJECT_DIR$/functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#pre#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../testing/HTML_ToPDF-3.5/examples/example1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="8" selection-start-line="25" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="17319">
+          <caret line="753" column="1" selection-start-line="753" selection-start-column="1" selection-end-line="753" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res-roi.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="371" column="52" selection-start-line="371" selection-start-column="52" selection-end-line="371" selection-end-column="52" />
-          <folding>
-            <element signature="e#376#1100#0#PHP" />
-            <element signature="e#1040#1170#0#PHP" />
-            <element signature="e#1104#1297#0#PHP" />
-            <element signature="n#wpb_adding_scripts#0;n#!!top" />
-            <element signature="e#2514#2572#0#PHP" />
-            <element signature="e#2573#2645#0#PHP" />
-            <element signature="e#2817#2915#0#PHP" />
-            <element signature="n#foobar_func#0;n#!!top" />
-            <element signature="n#plugin_activate#0;n#!!top" />
-            <element signature="n#plugin_unistall#0;n#!!top" />
-            <element signature="n#roiCreateDatabase#0;n#!!top" />
-            <element signature="n#${$table_name}#0" />
-            <element signature="n#postData#0;n#!!top" />
-            <element signature="e#6777#14049#0#PHP" />
-            <element signature="e#6821#11256#0#PHP" />
-            <element signature="e#8314#11091#0#PHP" />
-            <element signature="n#roiDeleteDatabase#0;n#!!top" />
-            <element signature="e#0#35#1" />
-            <element signature="n#sendMail#0;n#!!top" />
-          </folding>
+        <state relative-caret-position="456">
+          <caret line="306" column="40" selection-start-line="306" selection-start-column="40" selection-end-line="306" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="339" column="1" lean-forward="true" selection-start-line="339" selection-start-column="1" selection-end-line="339" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wizard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="713" column="119" selection-start-line="713" selection-start-column="98" selection-end-line="713" selection-end-column="119" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#4;n#section#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#3;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#5;n#div#1;n#div#5;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#1;n#div#6;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#4;n#section#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#label#0;n#div#2;n#div#0;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#0;n#section#2;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#3;n#div#0;n#section#2;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#section#3;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#div#2;n#section#3;n#div#0;n#div#0;n#body#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#12;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="424">
+          <caret line="211" column="67" lean-forward="true" selection-start-line="211" selection-start-column="67" selection-end-line="211" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.js">
+    <entry file="file:///private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/main.css" />
+    <entry file="file:///private/var/folders/_1/t4nyyjy95kd_ss8gs82qn0h00000gn/T/fz3temp-2/wizard.html" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.es6">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery-ui-1.12.1/functions_backup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="222" column="39" selection-start-line="222" selection-start-column="39" selection-end-line="222" selection-end-column="39" />
+        <state relative-caret-position="810">
+          <caret line="755" column="1" selection-start-line="755" selection-start-column="1" selection-end-line="755" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jquery-ui-1.12.1/functions_new.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="578" selection-start-line="578" selection-end-line="578" />
+          <folding>
+            <element signature="n#!!block;n#setup#0" />
+            <element signature="e#68#185#0" />
+            <element signature="e#291#1402#0" />
+            <element signature="e#1458#1857#0" />
+            <element signature="e#1491#1853#0" />
+            <element signature="n#!!block;n#modifyWizard#0" />
+            <element signature="e#1949#3304#0" />
+            <element signature="e#2040#2152#0" />
+            <element signature="e#2208#2478#0" />
+            <element signature="e#2535#2641#0" />
+            <element signature="n#!!block;n#settingEventListeners#0" />
+            <element signature="e#3404#11636#0" />
+            <element signature="e#3468#4736#0" />
+            <element signature="e#3546#4147#0" />
+            <element signature="n#Style#0;n#h3#0;n#!!top" expanded="true" />
+            <element signature="e#4164#4269#0" />
+            <element signature="e#4859#5026#0" />
+            <element signature="e#5186#5309#0" />
+            <element signature="e#5431#5604#0" />
+            <element signature="e#5731#5902#0" />
+            <element signature="e#6063#6177#0" />
+            <element signature="e#6300#6474#0" />
+            <element signature="e#6605#6724#0" />
+            <element signature="e#6882#7001#0" />
+            <element signature="e#7122#7292#0" />
+            <element signature="e#7428#7550#0" />
+            <element signature="e#7711#7827#0" />
+            <element signature="e#7951#8127#0" />
+            <element signature="e#8293#8542#0" />
+            <element signature="e#8731#9022#0" />
+            <element signature="e#9165#9407#0" />
+            <element signature="e#9241#9280#0" />
+            <element signature="e#9474#9611#0" />
+            <element signature="e#10963#11275#0" />
+            <element signature="e#11055#11151#0" />
+            <element signature="e#11169#11264#0" />
+            <element signature="e#11357#11627#0" />
+            <element signature="e#11435#11517#0" />
+            <element signature="e#11535#11616#0" />
+            <element signature="n#!!block;n#disableTab#0" />
+            <element signature="e#11750#11805#0" />
+            <element signature="n#!!block;n#controllTabSubMenuLast#0" />
+            <element signature="e#11987#12042#0" />
+            <element signature="e#12086#12245#0" />
+            <element signature="e#12119#12239#0" />
+            <element signature="n#!!block;n#createSliders#0" />
+            <element signature="e#12337#12962#0" />
+            <element signature="e#12397#12843#0" />
+            <element signature="e#12516#12651#0" />
+            <element signature="e#12685#12833#0" />
+            <element signature="e#12999#13663#0" />
+            <element signature="e#13065#13531#0" />
+            <element signature="e#13191#13339#0" />
+            <element signature="e#13373#13521#0" />
+            <element signature="e#13700#14562#0" />
+            <element signature="e#13761#14360#0" />
+            <element signature="e#13880#14098#0" />
+            <element signature="e#14132#14350#0" />
+            <element signature="n#!!block;n#setSliderValueOutputPercent#0" />
+            <element signature="n#!!block;n#setSliderValueOutputCustomer#0" />
+            <element signature="e#14827#14862#0" />
+            <element signature="e#14872#14904#0" />
+            <element signature="n#!!block;n#OpenSpecifyMenu#0" />
+            <element signature="n#!!block;n#CloseSpecifyMenu#0" />
+            <element signature="n#!!block;n#sumOfValues#0" />
+            <element signature="e#15839#15967#0" />
+            <element signature="e#15904#15936#0" />
+            <element signature="n#!!block;n#setTotalTime#0" />
+            <element signature="n#!!block;n#secondsToHoursAndMinutes#0" />
+            <element signature="e#16410#16473#0" />
+            <element signature="n#!!block;n#secondsTimeSpanToMS#0" />
+            <element signature="e#16728#16753#0" />
+            <element signature="e#16763#16789#0" />
+            <element signature="n#!!block;n#setPercentageTotal#0" />
+            <element signature="n#!!block;n#setFalseRide_Amount#0" />
+            <element signature="n#!!block;n#percentageValidation#0" />
+            <element signature="e#17444#17519#0" />
+            <element signature="e#17529#17607#0" />
+            <element signature="n#!!block;n#currentscreen#0" />
+            <element signature="e#17780#18504#0" />
+            <element signature="e#17815#17904#0" />
+            <element signature="e#17913#18002#0" />
+            <element signature="e#18011#18100#0" />
+            <element signature="e#18109#18198#0" />
+            <element signature="e#18207#18296#0" />
+            <element signature="e#18305#18394#0" />
+            <element signature="e#18403#18498#0" />
+            <element signature="n#!!block;n#checkIfInputIsSet#0" />
+            <element signature="e#18799#18885#0" />
+            <element signature="e#18840#18879#0" />
+            <element signature="n#!!block;n#validatingPercentageBeforeNext#0" />
+            <element signature="n#!!block;n#GoNext#0" />
+            <element signature="e#19892#20168#0" />
+            <element signature="e#20032#20162#0" />
+            <element signature="e#20178#20301#0" />
+            <element signature="n#!!block;n#StartRoi#0" />
+            <element signature="n#!!block;n#GoPrevious#0" />
+            <element signature="e#20697#20871#0" />
+            <element signature="n#!!block;n#updateEvaluationText#0" />
+            <element signature="n#!!block;n#collectingData#0" />
+            <element signature="e#21349#21383#0" />
+            <element signature="e#21487#21527#0" />
+            <element signature="e#21627#21665#0" />
+            <element signature="e#21760#21869#0" />
+            <element signature="e#21940#22416#0" />
+            <element signature="e#22059#22091#0" />
+            <element signature="e#22143#22379#0" />
+            <element signature="e#22271#22310#0" />
+            <element signature="e#22316#22355#0" />
+            <element signature="n#!!block;n#hoursToMoney#0" />
+            <element signature="n#!!block;n#costSavingFalseRides#0" />
+            <element signature="n#!!block;n#timeSavingsCustomerSatisfactionGewAbf#0" />
+            <element signature="n#!!block;n#customersLost#0" />
+            <element signature="n#!!block;n#savedFalseRides#0" />
+            <element signature="n#!!block;n#savedFalseRidesCost#0" />
+            <element signature="n#!!block;n#makePost#0" />
+            <element signature="n#!!block;n#validateEmail#0" />
+          </folding>
         </state>
       </provider>
     </entry>
