@@ -29,9 +29,9 @@ Copyright 2005-2018 Resourcify GmbH
 */
 
 // Make sure we don't expose any info if called directly
-if ( !function_exists( 'add_action' ) ) {
-	echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
-	exit;
+if (!function_exists('add_action')) {
+    echo 'Hi there!  I\'m just a plugin, not much I can do when called directly.';
+    exit;
 }
 
 /*define( 'RES-ROI_VERSION', '1.0.0' );
@@ -39,42 +39,40 @@ define( 'RES-ROI__MINIMUM_WP_VERSION', '4.0' );
 define( 'RES-ROI__PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'RES-ROI_DELETE_LIMIT', 100000 );*/
 
-register_activation_hook( 'res-roi/res-roi.php', 'plugin_activate' );
-register_deactivation_hook( 'res-roi/res-roi.php', 'plugin_unistall' );
-register_uninstall_hook('res-roi/res-roi.php' , 'plugin_unistall');
-add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
+register_activation_hook('res-roi/res-roi.php', 'plugin_activate');
+register_deactivation_hook('res-roi/res-roi.php', 'plugin_unistall');
+register_uninstall_hook('res-roi/res-roi.php', 'plugin_unistall');
+add_action('wp_enqueue_scripts', 'wpb_adding_scripts');
 
 //add_action( 'wp_ajax_save_data', 'my_ajax_handler' );
 //add_action( 'wp_ajax_nopriv_save_data', 'my_ajax_handler' );
 
-add_action( 'wp_ajax_save_data', 'my_ajax_handler' );
-add_action( 'wp_ajax_nopriv_save_data', 'my_ajax_handler' );
+add_action('wp_ajax_save_data', 'my_ajax_handler');
+add_action('wp_ajax_nopriv_save_data', 'my_ajax_handler');
 
-add_action( 'wp_ajax_send_mail', 'my_ajax_handler_mail' );
-add_action( 'wp_ajax_nopriv_send_mail', 'my_ajax_handler_mail' );
-
-
+add_action('wp_ajax_send_mail', 'my_ajax_handler_mail');
+add_action('wp_ajax_nopriv_send_mail', 'my_ajax_handler_mail');
 
 
+function wpb_adding_scripts()
+{
 
-function wpb_adding_scripts() {
+    wp_enqueue_script('jquery.js', plugins_url('jquery.js', __FILE__), '1.1', true);
 
-    wp_enqueue_script('jquery.js', plugins_url('jquery.js', __FILE__),'1.1', true);
+    wp_enqueue_script('jquery-ui.js', plugins_url('jquery-ui-1.12.1/jquery-ui.js', __FILE__), '1.1', true);
 
-    wp_enqueue_script('jquery-ui.js', plugins_url('jquery-ui-1.12.1/jquery-ui.js', __FILE__),'1.1', true);
+    wp_enqueue_script('jquery.steps.js', plugins_url('jquery.steps-1.1.0/jquery.steps.js', __FILE__), '1.1', true);
 
-    wp_enqueue_script('jquery.steps.js', plugins_url('jquery.steps-1.1.0/jquery.steps.js', __FILE__),'1.1', true);
+    wp_enqueue_style('jquery-ui.min', plugins_url('jquery-ui-1.12.1/jquery-ui.min.css', __FILE__), true, '1.1');
 
-    wp_enqueue_style( 'jquery-ui.min', plugins_url('jquery-ui-1.12.1/jquery-ui.min.css', __FILE__),true,'1.1');
+    wp_enqueue_style('jquery.steps', plugins_url('css/jquery.steps.css', __FILE__), true, '1.1');
 
-    wp_enqueue_style( 'jquery.steps', plugins_url('css/jquery.steps.css', __FILE__),true,'1.1');
+    wp_enqueue_style('main', plugins_url('css/main.css', __FILE__), true, '1.4');
 
-    wp_enqueue_style( 'main', plugins_url('css/main.css', __FILE__),true,'1.4');
-
-    wp_enqueue_script('functions', plugins_url('functions.js', __FILE__),'1.5', true);
+    wp_enqueue_script('functions', plugins_url('functions.js', __FILE__), '1.5', true);
 
     $script_data = array(
-        'admin_ajax' => admin_url( 'admin-ajax.php' )
+        'admin_ajax' => admin_url('admin-ajax.php')
     );
 
     wp_localize_script(
@@ -90,9 +88,10 @@ function wpb_adding_scripts() {
 //add_action( 'wp_ajax_my_tag_count', 'my_ajax_handler' );
 //$title_nonce = wp_create_nonce( 'title_example' );
 
-function my_ajax_handler() {
-   /* $title_nonce = wp_create_nonce( 'title_example' );
-    check_ajax_referer( 'title_example' );*/
+function my_ajax_handler()
+{
+    /* $title_nonce = wp_create_nonce( 'title_example' );
+     check_ajax_referer( 'title_example' );*/
 
     $data = $_POST['formdata'];
 
@@ -103,38 +102,44 @@ function my_ajax_handler() {
 }
 
 
-function my_ajax_handler_mail() {
+function my_ajax_handler_mail()
+{
     /* $title_nonce = wp_create_nonce( 'title_example' );
      check_ajax_referer( 'title_example' );*/
 
     $data = $_POST['formdata'];
+    $results = $_POST['results'];
 
-    sendMail($data);
+
+    sendMail($data, $results);
 
 
     wp_die(); // All ajax handlers die when finished
 }
 
-function foobar_func( $atts ){
+function foobar_func($atts)
+{
     $wizard = file_get_contents(plugins_url('wizard.html', __FILE__));
     return $wizard;
 }
 
-add_shortcode( 'foobar', 'foobar_func' );
+add_shortcode('res-roi-widged', 'foobar_func');
 
 
-function plugin_activate() {
+function plugin_activate()
+{
     roiCreateDatabase();
-    postData();
 
 }
 
-function plugin_unistall(){
+function plugin_unistall()
+{
     roiDeleteDatabase();
 }
 
 
-function roiCreateDatabase(){
+function roiCreateDatabase()
+{
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
 
@@ -210,13 +215,14 @@ function roiCreateDatabase(){
       PRIMARY KEY  (id)
     ) $charset_collate;";
 
-    require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-    dbDelta( $sql );
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+    dbDelta($sql);
 
 
 }
 
-function postData($json){
+function postData($json)
+{
 
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
@@ -225,14 +231,13 @@ function postData($json){
     $wpdb->insert(
         $table_name,
         array(
-            'time' => '1',
             'hubspotutk' => $json['hubspotutk'],
             'hssc' => $json['hssc'],
-             'UserIP' => '1',
+            'UserIP' => '1',
             'General_Step' => '1',
             'Orders_Week' => $json['Orders_Week'],
             'Cost_Depsoition' => $json['Cost_Depsoition'],
-           'ErpSystem' => $json['ErpSystem'],
+            'ErpSystem' => $json['ErpSystem'],
             'Percentage_Mail' => $json['Percentage_Mail'],
             'Percentage_Phone' => $json['Percentage_Phone'],
             'Percentage_Fax' => $json['Percentage_Fax'],
@@ -362,36 +367,68 @@ function postData($json){
 
 }
 
-function roiDeleteDatabase($json){
+function roiDeleteDatabase($json)
+{
     global $wpdb;
     $table_name = $wpdb->prefix . "roi_data";
     $sql = "DROP TABLE IF EXISTS $table_name";
     $wpdb->query($sql);
 }
 
-function sendMail($json){
+function sendMail($json, $results)
+{
 
+    $values = "
+    <br><br>Here are the values to change in the PDF (in the current Version not all are needed):<br>" .
+        "<br>Admin_Current_Time_Month: " . $results['Admin_Current_Time_Month'] .
+        "<br>Admin_Current_Cost_Month: " . $results['Admin_Current_Cost_Month'] .
+        "<br>Admin_Saved_Time_Month: " . $results['Admin_Saved_Time_Month'] .
+        "<br>Admin_Saved_Cost_Month: " . $results['Admin_Saved_Cost_Month'] .
+        "<br>FalseRides_Saved_Cost_Month: " . $results['FalseRides_Saved_Cost_Month'] .
+        "<br>GewAbf_Saved_Time_Year: " . $results['GewAbf_Saved_Time_Year'] .
+        "<br>FalseRides_Saved_Amount_Month: " . $results['FalseRides_Saved_Amount_Month'] .
+        "<br>FalseRides_Saved_Amount_Year: " . $results['FalseRides_Saved_Amount_Year'] .
+        "<br>Admin_Saved_Cost_Year: " . $results['Admin_Saved_Cost_Year'] .
+        "<br>DevelopementCostSaved: " . $results['DevelopementCostSaved']."<br>".
+        "<br>For Diagramm: <br>".
+        "<br>Time_Mail_Week: " . $results['Time_Mail_Week']."<br>".
+        "<br>Time_Phone_Week: " . $results['Time_Phone_Week']."<br>".
+        "<br>Time_Fax_Week: " . $results['Time_Fax_Week']."<br>".
+        "<br>Time_Portal_Week: " . $results['Time_Portal_Week']."<br>"
+    ;
     $to = $json['Customer_Mail'];
     $subject = "Ihr Vorteil durch Resourcify";
     $txt = "Wir sind dabei Ihr ergebniss auszuwerten und werden uns demnächt mit Ihnen in Verbindung setzen. <br><br> Mit freundlichen Grüßen <br> Ihr Resourcify Team";
-    $headers = "From: info@resourcify.de" . "\r\n".'Content-type: text/html; charset=utf8' . "\r\n";
+    $headers = "From: felix.heinricy@resourcify.de" . "\r\n" . 'Content-type: text/html; charset=utf8' . "\r\n";
     $message = $txt;
 
-    mail($to,$subject,$txt,$headers);
-
 // Send the email
-    if(mail($to, $subject, $message, $headers)) {
+    if (mail($to, $subject, $message, $headers)) {
         echo "The email was sent.";
-    }
-    else {
+    } else {
 
         echo "There was an error sending the mail.";
 
     }
+
+    $to = 'moritz.hoeppner@resourcify.de';
+    $subject = "Ihr Vorteil durch Resourcify";
+    $txt = 'ROI was filled by ' . $json['Customer_Name'] . '. Moritz will check the backend and is in charge of the further progress. <br> In case you think it might have been forgotten please remind the person in charge. <br> the customer mail is: ' . $json['Customer_Mail'] .$values;
+    $headers = "From: roi@resourcify.de" . "\r\n" . 'Content-type: text/html; charset=utf8' . "\r\n";
+
+    mail($to, $subject, $txt, $headers);
+
+    $to = 'gary.lewis@resourcify.de';
+    $subject = "Ihr Vorteil durch Resourcify";
+    $txt = 'ROI was filled by '.$json['Customer_Name'].'. Moritz will check the backend and is in charge of the further progress. <br> In case you think it might have been forgotten please remind the person in charge. <br> the customer mail is: '.$json['Customer_Mail'].$values;
+    $headers = "From: roi@resourcify.de" . "\r\n".'Content-type: text/html; charset=utf8' . "\r\n";
+
+    mail($to,$subject,$txt,$headers);
+
 }
 
 
-/*
+/*s
 function createPDF(){
 
     $url = 'https://pdf.mein-recycling.de/api/pdf/10';
